@@ -4,6 +4,12 @@ import { Container, Image } from "react-bootstrap";
 import SwiperCore, { Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
+const images = {
+  'client-1': require('src/assets/images/client-1.jpg'),
+  'client-2': require('src/assets/images/client-2.jpg'),
+  'client-3': require('src/assets/images/client-3.jpg'),
+};
+
 SwiperCore.use([Autoplay]);
 
 const options = {
@@ -40,7 +46,9 @@ const ClientItem = ({ client = {} }) => {
       <p>{text}</p>
       <h5 className="title">- {name}</h5>
       <Image
-        src={require(`src/assets/images/${image}`).default.src}
+        src={images[image]}
+        // src={require(`src/assets/images/${image}`).default.src}
+        // src={'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSixcmQsARbTtwpySN--xqSmWg_p2yTCYv80A&s'}
         alt="client"
       />
     </div>
