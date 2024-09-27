@@ -14,8 +14,7 @@ const StepsItem = ({ step = {} }) => {
       <div className="easy-steps-item mt-50 text-center">
         <div className="thumb">
           <Image
-            // src={require(`src/assets/images/${image}`).default.src}
-            src={'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSixcmQsARbTtwpySN--xqSmWg_p2yTCYv80A&s'}
+            src={require(`src/assets/images/${image}`).default.src}
             alt=""
           />
           <i className={icon}></i>
