@@ -1,4 +1,5 @@
 import { projectDetailsSidebar } from "@/data/projectsArea";
+import Link from "next/link";
 import React from "react";
 import { Image } from "react-bootstrap";
 
@@ -26,9 +27,9 @@ const ProjectDetailsPark = ({ perk = {} }) => {
           {claimed} out of {totalClaimed} <span>claimed</span>
         </li>
       </ul>
-      <a className="main-btn" href="#">
+      <Link className="main-btn" href="#">
         Continue now
-      </a>
+      </Link>
     </div>
   );
 };

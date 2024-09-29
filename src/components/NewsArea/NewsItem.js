@@ -1,6 +1,6 @@
+import Link from "next/link";
 import React from "react";
 import { Col, Image } from "react-bootstrap";
-import Link from "../Reuseable/Link";
 
 const NewsItem = ({ news = {}, index = 0, newsTwo = false }) => {
   const { image, date, admin, comments, title, image2 } = news;
@@ -15,10 +15,7 @@ const NewsItem = ({ news = {}, index = 0, newsTwo = false }) => {
         }`}
       >
         <div className="news-thumb">
-          <Image
-            src={require(`src/assets/images/${newImage}`).default.src}
-            alt="news"
-          />
+          <Image src={newImage} alt="news" />
         </div>
         <div className="news-content">
           <span>{date}</span>

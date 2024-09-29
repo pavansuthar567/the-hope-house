@@ -1,4 +1,5 @@
 import { categoriesSection } from "@/data/categories";
+import Link from "next/link";
 import React from "react";
 import { Col, Container, Image, Row } from "react-bootstrap";
 
@@ -10,11 +11,11 @@ const CategoriesBoxItem = ({ categories = [] }) => {
     <div className="categories-box-item">
       {categories.map(({ id, icon, title }) => (
         <div key={id} className="item">
-          <a href="#">
+          <Link href="#">
             <i className={icon}></i>
             <br />
             <span>{title}</span>
-          </a>
+          </Link>
         </div>
       ))}
     </div>

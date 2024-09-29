@@ -39,10 +39,7 @@ const ClientItem = ({ client = {} }) => {
       <i className="flaticon-left-quotes-sign"></i>
       <p>{text}</p>
       <h5 className="title">- {name}</h5>
-      <Image
-        src={require(`src/assets/images/${image}`).default.src}
-        alt="client"
-      />
+      <Image src={image} alt="client" />
     </div>
   );
 };

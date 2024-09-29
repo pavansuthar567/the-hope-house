@@ -1,4 +1,5 @@
 import { projectDetailsArea } from "@/data/projectsArea";
+import Link from "next/link";
 import React from "react";
 import { Col, Container, Image, Row } from "react-bootstrap";
 
@@ -68,18 +69,18 @@ const ProjectDetailsArea = () => {
                 </span>
               </div>
               <div className="project-btn mt-25">
-                <a className="main-btn" href="#">
+                <Link className="main-btn" href="#">
                   Back this project
-                </a>
+                </Link>
               </div>
               <div className="project-share d-flex align-items-center">
                 <span>Share this Project</span>
                 <ul>
                   {socials.map(({ id, icon, href }) => (
                     <li key={id}>
-                      <a href={href}>
+                      <Link href={href}>
                         <i className={icon}></i>
-                      </a>
+                      </Link>
                     </li>
                   ))}
                 </ul>

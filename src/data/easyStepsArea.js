@@ -5,25 +5,25 @@ export const easyStepsArea = {
   steps: [
     {
       id: 1,
-      image: "4-easy-steps-1.png",
+      image: "src/assets/images/4-easy-steps-1.png",
       icon: "flaticon-creativity",
       title: "Concept",
     },
     {
       id: 2,
-      image: "4-easy-steps-2.png",
+      image: "src/assets/images/4-easy-steps-2.png",
       icon: "flaticon-invention",
       title: "Prototype",
     },
     {
       id: 3,
-      image: "4-easy-steps-3.png",
+      image: "src/assets/images/4-easy-steps-3.png",
       icon: "flaticon-smartphone",
       title: "Production",
     },
     {
       id: 4,
-      image: "4-easy-steps-4.png",
+      image: "src/assets/images/4-easy-steps-4.png",
       icon: "flaticon-nanotechnology",
       title: "Shipping",
     },

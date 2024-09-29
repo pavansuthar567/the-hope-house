@@ -31,10 +31,7 @@ const ProjectDetailsUpdate = ({ update = {} }) => {
         <p>{text}</p>
         <p className="text">{text2}</p>
         <div className="project-updates-thumb mt-50">
-          <Image
-            src={require(`src/assets/images/${image}`).default.src}
-            alt=""
-          />
+          <Image src={image} alt="" />
         </div>
       </div>
     </div>

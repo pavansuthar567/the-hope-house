@@ -1,7 +1,9 @@
+"use client";
+
+import Link from "next/link";
 import React from "react";
 import { Col, Container, Image, Row } from "react-bootstrap";
 import { useSwiperSlide } from "swiper/react";
-import Link from "../Reuseable/Link";
 
 const SingleBanner = ({
   singleSlide = {},
@@ -18,9 +20,7 @@ const SingleBanner = ({
         isBannerThree ? "banner-3-area align-items-end" : "align-items-center"
       }`}
       style={{
-        backgroundImage: `url(${
-          require(`src/assets/images/${bg}`).default.src
-        })`,
+        backgroundImage: `url(${bg})`,
       }}
     >
       <Container>

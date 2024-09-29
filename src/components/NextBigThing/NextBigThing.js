@@ -1,4 +1,5 @@
 import { nextBigThing } from "@/data/nextBigThing";
+import Link from "next/link";
 import React, { useState } from "react";
 import { Col, Container, Image, Row } from "react-bootstrap";
 
@@ -10,13 +11,14 @@ const NavItem = ({ tab = {}, current, handleCurrent }) => {
 
   return (
     <li className="nav-item" role="presentation">
-      <a
+      <Link
         onClick={() => handleCurrent(id)}
         className={`nav-link cursor-pointer${active ? " active" : ""}`}
         role="tab"
+        href="#"
       >
         {tagline}
-      </a>
+      </Link>
     </li>
   );
 };

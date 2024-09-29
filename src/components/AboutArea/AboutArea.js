@@ -1,8 +1,8 @@
 import { aboutArea } from "@/data/aboutArea";
 import React from "react";
 import { Col, Container, Image, Row } from "react-bootstrap";
-import Link from "../Reuseable/Link";
 import TextSplit from "../Reuseable/TextSplit";
+import Link from "next/link";
 
 const {
   thumb1,

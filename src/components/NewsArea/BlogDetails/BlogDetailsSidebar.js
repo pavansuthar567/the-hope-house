@@ -1,7 +1,7 @@
 import SearchIcon from "@/components/Header/SearchIcon";
-import Link from "@/components/Reuseable/Link";
 import { blogDetailsSidebar } from "@/data/newsArea";
 import handleSubmit from "@/utils/handleSubmit";
+import Link from "next/link";
 import React from "react";
 import { Image } from "react-bootstrap";
 
@@ -14,10 +14,7 @@ const SidebarPostSingle = ({ post = {} }) => {
     <div className="sidebar__post__single">
       <div className="sidebar__post-image">
         <div className="inner-block">
-          <Image
-            src={require(`src/assets/images/${image}`).default.src}
-            alt="Awesome Image"
-          />
+          <Image src={image} alt="Awesome Image" />
         </div>
       </div>
       <div className="sidebar__post-content">
@@ -50,7 +47,7 @@ const BlogDetailsSidebar = () => {
         <ul className="sidebar__category-list">
           {categories.map((category, i) => (
             <li key={i} className="sidebar__category-list-item">
-              <a href="#">{category} </a>
+              <Link href="#">{category} </Link>
             </li>
           ))}
         </ul>
@@ -68,7 +65,7 @@ const BlogDetailsSidebar = () => {
         <ul className="sidebar__tags-list">
           {tags.map((tag, i) => (
             <li key={i} className="sidebar__tags-list-item me-1">
-              <a href="#">{tag},</a>
+              <Link href="#">{tag},</Link>
             </li>
           ))}
         </ul>

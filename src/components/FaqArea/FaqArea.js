@@ -2,18 +2,19 @@ import { faqArea } from "@/data/faqArea";
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import Faqs from "./Faqs";
+import Link from "next/link";
 
 const { bg, tagline, title, text, categories, faqs } = faqArea;
 
 const Category = ({ category = {} }) => {
-  const { href, icon, text } = category;
+  const { href = "", icon, text } = category;
   return (
     <div className="item">
-      <a href={href}>
+      <Link href={href}>
         <i className={icon}></i>
         <br />
         <span>{text}</span>
-      </a>
+      </Link>
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import { togetherArea } from "@/data/togetherArea";
+import Link from "next/link";
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import Link from "../Reuseable/Link";
 
 const { bg, tagline, title } = togetherArea;
 

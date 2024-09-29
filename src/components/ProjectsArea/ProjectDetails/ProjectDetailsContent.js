@@ -6,6 +6,7 @@ import ProjectDetailsFaq from "./ProjectDetailsFaq";
 import ProjectDetailsSidebar from "./ProjectDetailsSidebar";
 import ProjectDetailsStory from "./ProjectDetailsStory";
 import ProjectDetailsUpdates from "./ProjectDetailsUpdates";
+import Link from "next/link";
 
 const ProjectDetailsContent = () => {
   const [current, setCurrent] = useState("pills-home");
@@ -24,15 +25,16 @@ const ProjectDetailsContent = () => {
               <ul className="nav nav-pills" id="pills-tab" role="tablist">
                 {projectDetailsTabBtns.map(({ id, name }) => (
                   <li key={id} className="nav-item" role="presentation">
-                    <a
+                    <Link
                       onClick={() => setCurrent(id)}
                       className={`nav-link cursor-pointer${
                         id === current ? " active" : ""
                       }`}
                       role="tab"
+                      href="#"
                     >
                       {name}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>

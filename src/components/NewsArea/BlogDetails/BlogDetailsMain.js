@@ -1,4 +1,5 @@
 import { blogDetailsMain } from "@/data/newsArea";
+import Link from "next/link";
 import React, { Fragment } from "react";
 import { Image } from "react-bootstrap";
 
@@ -14,12 +15,12 @@ const BlogDetailsMain = () => {
       <div className="blog-details__content">
         <span>{date}</span>
         <div className="blog-one__meta">
-          <a href="#">
+          <Link href="#">
             <i className="fa fa-user-o"></i> {admin}
-          </a>
-          <a href="#">
+          </Link>
+          <Link href="#">
             <i className="fa fa-comments-o"></i> {comments} comments
-          </a>
+          </Link>
         </div>
         <h3>{title}</h3>
         <p>{text1}</p>
@@ -30,17 +31,17 @@ const BlogDetailsMain = () => {
           <span>Tags: </span>
           {tags.map((tag, i) => (
             <Fragment key={i}>
-              <a href="#">{tag},</a>{" "}
+              <Link href="#">{tag},</Link>{" "}
             </Fragment>
           ))}
         </div>
         <div className="blog-details__share">
           <ul>
-            {socials.map(({ id, icon, href }) => (
+            {socials.map(({ id, icon, href = "" }) => (
               <li key={id}>
-                <a href={href}>
+                <Link href={href}>
                   <i className={icon}></i>
-                </a>
+                </Link>
               </li>
             ))}
           </ul>

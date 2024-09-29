@@ -2,8 +2,8 @@ import footerData from "@/data/siteFooter";
 import handleSubmit from "@/utils/handleSubmit";
 import React from "react";
 import { Col, Container, Image, Row } from "react-bootstrap";
-import Link from "../Reuseable/Link";
 import FooterList from "./FooterList";
+import Link from "next/link";
 
 const { bg, logo, text, author, year, links, socials, text2, shape } =
   footerData;
@@ -27,9 +27,9 @@ const SiteFooter = () => {
               <ul>
                 {socials.map(({ id, icon, href }) => (
                   <li key={id}>
-                    <a href={href}>
+                    <Link href={href}>
                       <i className={icon}></i>
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>

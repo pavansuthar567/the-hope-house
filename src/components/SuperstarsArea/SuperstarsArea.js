@@ -1,9 +1,9 @@
 import { superstarsArea } from "@/data/superstarsArea";
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import Link from "../Reuseable/Link";
 import TextSplit from "../Reuseable/TextSplit";
 import VisibilityCountUp from "../Reuseable/VisibilityCountUp";
+import Link from "next/link";
 
 const { icon, title, text, count, experience, title2, text2 } = superstarsArea;
 

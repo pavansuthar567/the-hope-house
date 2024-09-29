@@ -15,10 +15,7 @@ const TestimonialsBox = ({ testimonial = {} }) => {
         </Col>
         <Col lg={5}>
           <div className="testimonials-thumb text-right">
-            <Image
-              src={require(`src/assets/images/${image}`).default.src}
-              alt=""
-            />
+            <Image src={image} alt="" />
             <div className="quote">
               <i className="flaticon-left-quotes-sign"></i>
             </div>

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import { Col, Image } from "react-bootstrap";
 
@@ -8,18 +9,15 @@ const TeamItem = ({ team = {} }) => {
     <Col lg={4} md={7}>
       <div className="team-item mt-30">
         <div className="team-thumb">
-          <Image
-            src={require(`src/assets/images/${image}`).default.src}
-            alt="team"
-          />
+          <Image src={image} alt="team" />
           <div className="share">
             <i className="fa fa-share-alt"></i>
             <ul>
               {socials.map(({ id, icon, href }) => (
                 <li key={id}>
-                  <a href={href}>
+                  <Link href={href}>
                     <i className={icon}></i>
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

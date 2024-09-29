@@ -108,7 +108,7 @@ export const exploreProjects = {
   projects: [
     {
       id: 1,
-      image: "project-1.jpg",
+      image: "src/assets/images/project-1.jpg",
       tagline: "Design",
       date: "20 Days Left",
       title: "The Power Bank that is Always Charged",
@@ -116,7 +116,7 @@ export const exploreProjects = {
     },
     {
       id: 2,
-      image: "project-2.jpg",
+      image: "src/assets/images/project-2.jpg",
       tagline: "Design",
       date: "20 Days Left",
       title: "The Power Bank that is Always Charged",
@@ -124,7 +124,7 @@ export const exploreProjects = {
     },
     {
       id: 3,
-      image: "project-3.jpg",
+      image: "src/assets/images/project-3.jpg",
       tagline: "Design",
       date: "20 Days Left",
       title: "The Power Bank that is Always Charged",
@@ -132,7 +132,7 @@ export const exploreProjects = {
     },
     {
       id: 4,
-      image: "project-4.jpg",
+      image: "src/assets/images/project-4.jpg",
       tagline: "Design",
       date: "20 Days Left",
       title: "The Power Bank that is Always Charged",
@@ -140,7 +140,7 @@ export const exploreProjects = {
     },
     {
       id: 5,
-      image: "project-5.jpg",
+      image: "src/assets/images/project-5.jpg",
       tagline: "Design",
       date: "20 Days Left",
       title: "The Power Bank that is Always Charged",
@@ -148,7 +148,7 @@ export const exploreProjects = {
     },
     {
       id: 6,
-      image: "project-7.jpg",
+      image: "src/assets/images/project-7.jpg",
       tagline: "Design",
       date: "20 Days Left",
       title: "The Power Bank that is Always Charged",
@@ -259,7 +259,7 @@ export const projectDetailsUpdates = {
       text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vulputate sed mauris vitae pellentesque. Nunc ut ullamcorper libero. Aenean fringilla mauris quis risus laoreet interdum. Quisque imperdiet orci in metus aliquam egestas. Fusce elit libero, imperdiet nec orci quis, convallis hendrerit nisl. Cras auctor nec purus at placerat.",
       text2:
         "Quisque consectetur, lectus in ullamcorper tempus, dolor arcu suscipit elit, id laoreet tortor justo nec arcu. Nam eu dictum ipsum. Morbi in mi eu urna placerat finibus a vel neque. Nulla in ex at mi viverra sagittis ut non erat. Praesent nec congue elit.",
-      image: "project-updates-thumb-1.jpg",
+      image: "src/assets/images/project-updates-thumb-1.jpg",
     },
     {
       id: 2,
@@ -272,7 +272,7 @@ export const projectDetailsUpdates = {
       text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vulputate sed mauris vitae pellentesque. Nunc ut ullamcorper libero. Aenean fringilla mauris quis risus laoreet interdum. Quisque imperdiet orci in metus aliquam egestas. Fusce elit libero, imperdiet nec orci quis, convallis hendrerit nisl. Cras auctor nec purus at placerat.",
       text2:
         "Quisque consectetur, lectus in ullamcorper tempus, dolor arcu suscipit elit, id laoreet tortor justo nec arcu. Nam eu dictum ipsum. Morbi in mi eu urna placerat finibus a vel neque. Nulla in ex at mi viverra sagittis ut non erat. Praesent nec congue elit.",
-      image: "project-updates-thumb-2.jpg",
+      image: "src/assets/images/project-updates-thumb-2.jpg",
     },
   ],
 };
@@ -282,14 +282,14 @@ export const projectDetailsComments = {
   comments: [
     {
       id: 1,
-      image: "comment-2.2.jpg",
+      image: "src/assets/images/comment-2.2.jpg",
       name: "Kevin Martin",
       date: "3 March, 2020",
       text: "Lorem Ipsum is simply dummy text of the rinting and typesetting been the industry standard dummy text ever sincer condimentum purus. In non ex at ligula fringilla lobortis.",
     },
     {
       id: 2,
-      image: "comment-2.1.jpg",
+      image: "src/assets/images/comment-2.1.jpg",
       name: "Sarah albert",
       date: "3 March, 2020",
       text: "Lorem Ipsum is simply dummy text of the rinting and typesetting been the industry standard dummy text ever sincer condimentum purus. In non ex at ligula fringilla lobortis.",

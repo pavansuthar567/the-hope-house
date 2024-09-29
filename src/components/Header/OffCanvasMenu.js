@@ -3,6 +3,7 @@ import headerData from "@/data/headerData";
 import React, { useState } from "react";
 import { Col, Row } from "react-bootstrap";
 import NavItem from "./NavItem";
+import Link from "next/link";
 
 const { navItems, email, socials } = headerData;
 
@@ -30,17 +31,17 @@ const OffCanvasMenu = () => {
                 }`}
               >
                 <div className="canvas_close">
-                  <a onClick={toggleMenu}>
+                  <Link onClick={toggleMenu} href="#">
                     <i className="fa fa-times"></i>
-                  </a>
+                  </Link>
                 </div>
                 <div className="offcanvas-social">
                   <ul className="text-center">
-                    {socials.map(({ id, icon, href }) => (
+                    {socials.map(({ id, icon, href = "" }) => (
                       <li key={id}>
-                        <a href={href}>
+                        <Link href={href}>
                           <i className={icon}></i>
-                        </a>
+                        </Link>
                       </li>
                     ))}
                   </ul>
@@ -60,9 +61,9 @@ const OffCanvasMenu = () => {
                 </div>
                 <div className="offcanvas_footer">
                   <span>
-                    <a href={`mailto:${email}`}>
+                    <Link href={`mailto:${email}`}>
                       <i className="fa fa-envelope-o"></i> {email}
-                    </a>
+                    </Link>
                   </span>
                 </div>
               </div>

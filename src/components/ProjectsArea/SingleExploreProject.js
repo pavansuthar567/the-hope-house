@@ -1,17 +1,17 @@
+import Link from "next/link";
 import React from "react";
 import { Image } from "react-bootstrap";
-import Link from "../Reuseable/Link";
 
 const SingleExploreProject = ({ project = {} }) => {
   const { image, tagline, date, title, raised } = project;
 
   return (
     <div className="explore-projects-item mt-30">
-      <Image src={require(`src/assets/images/${image}`).default.src} alt="" />
+      <Image src={image} alt="" />
       <div className="icon">
-        <a href="#">
+        <Link href="#">
           <i className="fa fa-heart"></i>
-        </a>
+        </Link>
       </div>
       <div className="explore-projects-content">
         <div className="item d-flex align-items-center">

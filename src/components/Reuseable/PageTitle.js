@@ -1,7 +1,7 @@
 import bg from "@/images/page-title-bg.jpg";
+import Link from "next/link";
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import Link from "./Link";
 
 const PageTitle = ({ title = "", page = "", parent = "" }) => {
   return (

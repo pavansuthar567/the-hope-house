@@ -1,8 +1,8 @@
 import React from "react";
 import { Col, Image, Row } from "react-bootstrap";
-import Link from "../Reuseable/Link";
 import HeaderInfo from "./HeaderInfo";
 import HeaderMenu from "./HeaderMenu";
+import Link from "next/link";
 
 const MainHeaderItem = ({
   logo,

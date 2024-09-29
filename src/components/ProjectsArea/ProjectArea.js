@@ -1,4 +1,5 @@
 import { projectArea } from "@/data/projectsArea";
+import Link from "next/link";
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 
@@ -20,9 +21,9 @@ const SingleProject = ({ project = {} }) => {
       >
         <h3 className="title">{title}</h3>
         <p>{text}</p>
-        <a className={`main-btn${btnClassName}`} href="#">
+        <Link className={`main-btn${btnClassName}`} href="#">
           {linkText}
-        </a>
+        </Link>
       </div>
     </Col>
   );

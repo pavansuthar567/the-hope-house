@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import { Col } from "react-bootstrap";
 
@@ -8,9 +9,9 @@ const FooterList = ({ title = "", list = [] }) => {
         <div className="footer-title">
           <h4 className="title">{title}</h4>
           <ul>
-            {list.map(({ id, text, href }) => (
+            {list.map(({ id, text, href = "" }) => (
               <li key={id}>
-                <a href={href}>{text}</a>
+                <Link href={href}>{text}</Link>
               </li>
             ))}
           </ul>

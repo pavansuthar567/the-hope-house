@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import { Image } from "react-bootstrap";
 
@@ -5,11 +6,11 @@ const PortfolioItem = ({ portfolio = {}, className = "" }) => {
   const { image } = portfolio;
   return (
     <div className={`portfolio-item${className}`}>
-      <Image src={require(`src/assets/images/${image}`).default.src} alt="" />
+      <Image src={image} alt="" />
       <div className="portfolio-overlay">
-        <a className="image-popup">
+        <Link className="image-popup" href="#">
           <i className="flaticon-add"></i>
-        </a>
+        </Link>
       </div>
     </div>
   );

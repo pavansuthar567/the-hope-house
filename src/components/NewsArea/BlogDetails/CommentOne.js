@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import { Image } from "react-bootstrap";
 
@@ -7,7 +8,7 @@ const CommentOneSingle = ({ comment = {} }) => {
   return (
     <div className="comment-one__single">
       <div className="comment-one__image">
-        <Image src={require(`src/assets/images/${image}`).default.src} alt="" />
+        <Image src={image} alt="" />
       </div>
       <div className="comment-one__content">
         <h3>
@@ -16,9 +17,9 @@ const CommentOneSingle = ({ comment = {} }) => {
         <p>{text}</p>
       </div>
       <div className="blog-btn">
-        <a href="#" className="main-btn">
+        <Link href="#" className="main-btn">
           Reply
-        </a>
+        </Link>
       </div>
     </div>
   );

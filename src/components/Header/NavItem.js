@@ -1,13 +1,13 @@
 import { useRootContext } from "@/context/context";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
-import Link from "../Reuseable/Link";
 
 const NavItem = ({ navItem = {}, mobile = false, activeId, handleActive }) => {
   const { pathname } = useRouter();
   const { toggleMenu } = useRootContext();
 
-  const { name, href, subNavItems = [], id } = navItem;
+  const { name, href = "", subNavItems = [], id } = navItem;
 
   const handleExpand = () => {
     if (mobile && href) {
@@ -39,7 +39,7 @@ const NavItem = ({ navItem = {}, mobile = false, activeId, handleActive }) => {
       </Link>
       {subNavItems.length > 0 && (
         <ul className={`sub-menu ${mobile && !active ? "d-none" : "d-block"}`}>
-          {subNavItems.map(({ href, name, id }) => (
+          {subNavItems.map(({ href = "", name, id }) => (
             <li key={id}>
               <Link onClick={() => mobile && toggleMenu(false)} href={href}>
                 {name}

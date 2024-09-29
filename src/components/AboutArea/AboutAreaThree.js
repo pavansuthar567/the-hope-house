@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Col, Container, Image, Row } from "react-bootstrap";
 import Title from "../Reuseable/Title";
 import VideoModal from "../Reuseable/VideoModal";
+import Link from "next/link";
 
 const { tagline, title, image, videoId, aboutTitle, items } = aboutAreaThree;
 
@@ -34,12 +35,13 @@ const AboutAreaThree = () => {
             <Col lg={6}>
               <div className="about-thumb">
                 <Image src={image.src} alt="thumb" />
-                <a
+                <Link
+                  href="#"
                   onClick={() => setOpen(true)}
                   className="video-popup cursor-pointer"
                 >
                   <i className="fa fa-play"></i>
-                </a>
+                </Link>
               </div>
             </Col>
             <Col lg={6}>

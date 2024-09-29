@@ -4,6 +4,7 @@ import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import MainHeaderItem from "./MainHeaderItem";
 import Social from "./Social";
+import Link from "next/link";
 
 const { logo, navItems, phone, icon, email, address, socials } = headerData;
 
@@ -19,14 +20,14 @@ const Header = ({ className = "" }) => {
               <div className="header-info">
                 <ul>
                   <li>
-                    <a href={`mailto:${email}`}>
+                    <Link href={`mailto:${email}`}>
                       <i className="flaticon-email"></i> {email}
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="#">
+                    <Link href="#">
                       <i className="flaticon-placeholder"></i> {address}
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>

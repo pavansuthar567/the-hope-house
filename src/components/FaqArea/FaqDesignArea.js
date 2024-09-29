@@ -2,23 +2,25 @@ import { faqDesignArea } from "@/data/faqArea";
 import React, { useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import Faqs from "./Faqs";
+import Link from "next/link";
 
 const { navItems, tabPane } = faqDesignArea;
 
 const NavItem = ({ navItem = {}, current, setCurrent }) => {
-  const { href, icon, name } = navItem;
+  const { href = "", icon, name } = navItem;
 
   return (
     <li className="nav-item" role="presentation">
-      <a
+      <Link
         onClick={() => setCurrent(href)}
         className={`nav-link cursor-pointer${
           href === current ? " active" : ""
         }`}
         role="tab"
+        href="#"
       >
         <i className={icon}></i> {name}
-      </a>
+      </Link>
     </li>
   );
 };

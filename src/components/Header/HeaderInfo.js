@@ -3,6 +3,7 @@ import React from "react";
 import { Image } from "react-bootstrap";
 import SearchIcon from "./SearchIcon";
 import Social from "./Social";
+import Link from "next/link";
 
 const HeaderInfo = ({ socials, icon, phone = "", searchColor }) => {
   const { toggleMenu, toggleSearch } = useRootContext();
@@ -11,9 +12,9 @@ const HeaderInfo = ({ socials, icon, phone = "", searchColor }) => {
     <div className="header-info d-flex align-items-center">
       {socials && <Social socials={socials} />}
       <div className="search d-none d-lg-block">
-        <a className="cursor-pointer" onClick={toggleSearch}>
+        <Link className="cursor-pointer" onClick={toggleSearch} href="#">
           <SearchIcon color={searchColor} />
-        </a>
+        </Link>
       </div>
       <div className="info d-none d-sm-block">
         <Image src={icon.src} alt="" />
