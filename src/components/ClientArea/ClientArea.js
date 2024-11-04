@@ -1,5 +1,5 @@
 import { clientArea } from "@/data/clientArea";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Container, Image } from "react-bootstrap";
 import SwiperCore, { Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -45,6 +45,12 @@ const ClientItem = ({ client = {} }) => {
 };
 
 const ClientArea = () => {
+  const [domLoaded, setDOMLoaded] = useState(false);
+
+  useEffect(() => {
+    setDOMLoaded(true);
+  }, []);
+
   return (
     <section className="client-area">
       <div className="client-top text-center">
@@ -52,15 +58,17 @@ const ClientArea = () => {
       </div>
       <Container fluid>
         <div className="client-active">
-          <Swiper {...options}>
-            <div className="swiper-wrapper">
-              {clients.map((client) => (
-                <SwiperSlide key={client.id}>
-                  <ClientItem client={client} />
-                </SwiperSlide>
-              ))}
-            </div>
-          </Swiper>
+          {domLoaded && (
+            <Swiper {...options}>
+              <div className="swiper-wrapper">
+                {clients.map((client) => (
+                  <SwiperSlide key={client.id}>
+                    <ClientItem client={client} />
+                  </SwiperSlide>
+                ))}
+              </div>
+            </Swiper>
+          )}
         </div>
       </Container>
     </section>

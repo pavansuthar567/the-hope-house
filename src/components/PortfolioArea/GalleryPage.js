@@ -10,7 +10,7 @@ const GalleryPage = () => {
         <Row>
           {galleryPage.map((portfolio) => (
             <Col key={portfolio.id} lg={4} md={6} sm={6}>
-              <PortfolioItem portfolio={portfolio} className=" mt-30" />
+              {/* <PortfolioItem portfolio={portfolio} className=" mt-30" /> */}
             </Col>
           ))}
         </Row>

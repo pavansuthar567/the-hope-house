@@ -22,7 +22,7 @@ const FaqTitleArea = () => {
                   <form onSubmit={handleSubmit(onSubmit)} className="input-box">
                     <input
                       type="text"
-                      placeholder="Search here anything..."
+                      placeholder="Search here anything...2121"
                       name="search"
                     />
                     <button>

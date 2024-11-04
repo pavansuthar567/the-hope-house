@@ -1,5 +1,5 @@
 import { brands } from "@/data/brandArea";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Container, Image } from "react-bootstrap";
 import SwiperCore, { Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -46,19 +46,27 @@ const BrandItem = ({ image }) => {
 };
 
 const BrandAreaTwo = ({ className = "" }) => {
+  const [domLoaded, setDOMLoaded] = useState(false);
+
+  useEffect(() => {
+    setDOMLoaded(true);
+  }, []);
+
   return (
     <div className={`brand-area-2 pt-120 pb-120 ${className}`}>
       <Container>
         <div className="brand-active">
-          <Swiper {...options}>
-            <div className="swiper-wrapper">
-              {brands.map(({ id, image }) => (
-                <SwiperSlide key={id}>
-                  <BrandItem image={image} />
-                </SwiperSlide>
-              ))}
-            </div>
-          </Swiper>
+          {domLoaded && (
+            <Swiper {...options}>
+              <div className="swiper-wrapper">
+                {brands.map(({ id, image }, index) => (
+                  <SwiperSlide key={`swiper-wrapper-brand-${id}-${index}`}>
+                    <BrandItem image={image} />
+                  </SwiperSlide>
+                ))}
+              </div>
+            </Swiper>
+          )}
         </div>
       </Container>
     </div>

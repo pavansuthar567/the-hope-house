@@ -1,19 +1,19 @@
-import { toast } from 'react-toastify';
+import { toast } from "react-toastify";
 
 import {
   setFaqsLoading,
   setFaqsList,
   setCrudFaqsLoading,
   setSelectedFaqs,
-} from 'src/store/slices/faqsSlice';
-import { fhelper } from 'src/_helpers';
-import axios from 'axios';
-import { toastError } from '.';
+} from "src/store/slices/faqsSlice";
+import { fhelper } from "src/_helpers";
+import axios from "axios";
+import { toastError } from ".";
 
-export const getFaqss = () => async (dispatch) => {
+export const getFaqs = () => async (dispatch) => {
   try {
     dispatch(setFaqsLoading(true));
-    const res = await axios.get('faq');
+    const res = await axios.get("faq");
     const updated = res?.data?.data?.map((x, i) => ({ srNo: i + 1, ...x }));
     await dispatch(setFaqsList(fhelper.sortByField(updated) || []));
     return true;
@@ -30,7 +30,7 @@ export const deleteFaqs = (id) => async (dispatch) => {
     dispatch(setCrudFaqsLoading(true));
     const res = await axios.delete(`faq/${id}`);
     if (res) {
-      toast.success('Faqs deleted successfully');
+      toast.success("Faqs deleted successfully");
       return true;
     } else return false;
   } catch (e) {
@@ -44,10 +44,10 @@ export const deleteFaqs = (id) => async (dispatch) => {
 export const createFaqs = (payload) => async (dispatch) => {
   try {
     dispatch(setCrudFaqsLoading(true));
-    const res = await axios.post('faq', payload);
+    const res = await axios.post("faq", payload);
 
     if (res) {
-      toast.success('Faqs inserted successfully');
+      toast.success("Faqs inserted successfully");
       return true;
     }
     return false;
@@ -68,10 +68,10 @@ export const updateFaqs = (obj) => async (dispatch) => {
         const res = await axios.put(`faq/${_id}`, payload);
 
         if (res) {
-          toast.success('Faqs updated successfully');
+          toast.success("Faqs updated successfully");
           return true;
         } else {
-          toast.success('Faqs Id is required');
+          toast.success("Faqs Id is required");
           return false;
         }
       }
@@ -86,7 +86,7 @@ export const updateFaqs = (obj) => async (dispatch) => {
   }
 };
 
-export const getFaqs = (id) => async (dispatch) => {
+export const getFaq = (id) => async (dispatch) => {
   try {
     dispatch(setFaqsLoading(true));
     const res = await axios.get(`faq/${id}`);

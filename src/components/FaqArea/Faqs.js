@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
-const Faq = ({ faq, current, handleCurrent }) => {
-  const { id, title, text } = faq;
+const Faq = ({ id, faq, current, handleCurrent }) => {
+  const { question, answer } = faq;
   const active = current === id;
 
   return (
@@ -9,12 +9,16 @@ const Faq = ({ faq, current, handleCurrent }) => {
       <div className="accrodion-inner">
         <div onClick={() => handleCurrent(id)} className="accrodion-title">
           <h4>
-            <span>{id}.</span> {title}
+            <span>{id}.</span> {question}
           </h4>
         </div>
         <div className={`accrodion-content${active ? "" : " d-none"}`}>
           <div className={`inner animated${active ? " fadeInUp" : ""}`}>
-            <p>{text}</p>
+            <p
+              dangerouslySetInnerHTML={{
+                __html: answer,
+              }}
+            ></p>
           </div>
         </div>
       </div>
@@ -36,10 +40,11 @@ const Faqs = ({ faqs = [], className = "" }) => {
           !className ? " animated fadeInLeft" : ""
         } faq-accrodion`}
       >
-        {faqs.map((faq) => (
+        {faqs.map((faq, index) => (
           <Faq
+            id={index + 1}
             faq={faq}
-            key={faq.id}
+            key={`${faq?.category}-${faq?._id}-${index}`}
             current={current}
             handleCurrent={handleCurrent}
           />
