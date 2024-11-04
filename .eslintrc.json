@@ -1,3 +1,28 @@
+// {
+//   "extends": "next/core-web-vitals"
+// }
 {
-  "extends": "next/core-web-vitals"
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "plugins": ["react-hooks"],
+  "extends": ["eslint:recommended", "plugin:react/recommended", "next"],
+  "rules": {
+    "react-hooks/exhaustive-deps": "warn",
+    "no-undef": "error"
+  },
+  //   "globals": {
+  //     "console": "readonly",
+  //     "window": "readonly",
+  //     "document": "readonly"
+  //   }
+  "env": {
+    "browser": true,
+    "node": true,
+    "es2020": true
+  }
 }

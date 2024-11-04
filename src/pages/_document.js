@@ -21,7 +21,7 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html lang="en">
+      <Html lang="en" suppressHydrationWarning>
         <Head>
           <link rel="icon" href="favicon.ico" />
           <link rel="shortcut icon" href="favicon.ico" type="image/png" />
