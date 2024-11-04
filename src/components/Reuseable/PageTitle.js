@@ -4,10 +4,15 @@ import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 
 const PageTitle = ({ title = "", page = "", parent = "" }) => {
+  const bgs = {
+    // FAQs: "https://www.andovercorp.com/content/uploads/FAQ.png",
+    FAQs: "https://media.licdn.com/dms/image/C4E12AQEOCRBXE5yUhA/article-cover_image-shrink_720_1280/0/1619501870929?e=2147483647&v=beta&t=By9px4peK-i3FL4ityNfFtN8v70KyJ4u1ruhD9TokR0",
+  };
+
   return (
     <section
       className="page-title-area bg_cover"
-      style={{ backgroundImage: `url(${bg.src})` }}
+      style={{ backgroundImage: `url(${bgs[title]})` }}
     >
       <Container>
         <Row>
