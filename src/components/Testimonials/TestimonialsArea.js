@@ -1,10 +1,11 @@
-import { testimonialsArea } from "@/data/testimonialsArea";
-import React from "react";
+import React, { useCallback, useEffect } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import SwiperCore, { Autoplay, EffectFade, Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Title from "../Reuseable/Title";
 import TestimonialsBox from "./TestimonialsBox";
+import { getTestimonials } from "src/_services/testimonial.service";
+import { useDispatch, useSelector } from "react-redux";
 
 SwiperCore.use([EffectFade, Navigation, Autoplay]);
 
@@ -21,15 +22,31 @@ const options = {
   },
 };
 
-const { title, tagline, testimonials } = testimonialsArea;
-
 const TestimonialsArea = () => {
+  const dispatch = useDispatch();
+
+  const { testimonialList: testimonials } = useSelector(
+    ({ testimonial }) => testimonial
+  );
+
+  const loadData = useCallback(() => {
+    dispatch(getTestimonials());
+  }, [dispatch]);
+
+  useEffect(() => {
+    loadData();
+  }, [loadData]);
+
   return (
     <section className="testimonials-area">
       <Container>
         <Row className="justify-content-center">
           <Col lg={6}>
-            <Title title={title} tagline={tagline} className="text-center" />
+            <Title
+              title={"Our Testimonials"}
+              tagline={"What They Say"}
+              className="text-center"
+            />
           </Col>
         </Row>
         <Row>
@@ -38,7 +55,7 @@ const TestimonialsArea = () => {
               <Swiper {...options}>
                 <div className="swiper-wrapper">
                   {testimonials.map((testimonial) => (
-                    <SwiperSlide key={testimonial.id}>
+                    <SwiperSlide key={`testimonial_${testimonial._id}`}>
                       <TestimonialsBox testimonial={testimonial} />
                     </SwiperSlide>
                   ))}

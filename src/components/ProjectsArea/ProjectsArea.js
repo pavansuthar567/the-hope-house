@@ -1,5 +1,6 @@
+"use client";
 import { projectsArea } from "@/data/projectsArea";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import SwiperCore, { Autoplay, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -41,6 +42,12 @@ const options = {
 const { tagline, title, projects } = projectsArea;
 
 const ProjectsArea = ({ className = "" }) => {
+  const [domLoaded, setDOMLoaded] = useState(false);
+
+  useEffect(() => {
+    setDOMLoaded(true);
+  }, []);
+
   return (
     <section className={`explore-projects-area ${className}`}>
       <Container>
@@ -50,15 +57,17 @@ const ProjectsArea = ({ className = "" }) => {
           </Col>
         </Row>
         <div className="explore-project-active">
-          <Swiper {...options}>
-            <div className="swiper-wrapper">
-              {projects.slice(0, 4).map((project) => (
-                <SwiperSlide key={project.id}>
-                  <SingleProject project={project} />
-                </SwiperSlide>
-              ))}
-            </div>
-          </Swiper>
+          {domLoaded && (
+            <Swiper {...options}>
+              <div className="swiper-wrapper">
+                {projects?.slice(0, 4)?.map((project) => (
+                  <SwiperSlide key={`${project?.id}-${project.title}`}>
+                    <SingleProject project={project} />
+                  </SwiperSlide>
+                ))}
+              </div>
+            </Swiper>
+          )}
         </div>
       </Container>
     </section>

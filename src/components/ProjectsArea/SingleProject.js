@@ -1,6 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { Image } from "react-bootstrap";
 
 const SingleProject = ({ project = {} }) => {
   const { image, category, date, title, goal, raised } = project;
@@ -8,7 +8,12 @@ const SingleProject = ({ project = {} }) => {
   return (
     <div className="explore-projects-item mt-30">
       <div className="explore-projects-thumb">
-        <Image src={image.src} alt="explore-projects" />
+        <Image
+          src={image.src}
+          alt="explore-projects"
+          width={100}
+          height={100}
+        />
         <Link href="#">
           <i className="fa fa-heart"></i>
         </Link>
