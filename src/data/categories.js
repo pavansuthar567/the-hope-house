@@ -2,43 +2,83 @@ import bg from "@/images/categories-bg.jpg";
 import categoriesUser from "@/images/categories-user.png";
 import signIn from "@/images/singin.png";
 
+// export const categoriesSection = {
+//   bg,
+//   tagline: "Which Category Intrest You",
+//   title: "Top Categories",
+//   text: " Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the when an unknown was popularised.",
+//   categoriesUser,
+//   signIn,
+//   categories: [
+//     {
+//       id: 1,
+//       icon: "flaticon-networking",
+//       title: "Technology",
+//     },
+//     {
+//       id: 2,
+//       icon: "flaticon-photograph",
+//       title: "Film & Videos",
+//     },
+//     {
+//       id: 3,
+//       icon: "flaticon-translation",
+//       title: "Education",
+//     },
+//     {
+//       id: 4,
+//       icon: "flaticon-stethoscope",
+//       title: "Medical",
+//     },
+//     {
+//       id: 5,
+//       icon: "flaticon-skincare",
+//       title: "Fashion",
+//     },
+//     {
+//       id: 6,
+//       icon: "flaticon-design",
+//       title: "Design",
+//     },
+//   ],
+// };
 export const categoriesSection = {
   bg,
-  tagline: "Which Category Intrest You",
-  title: "Top Categories",
-  text: " Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the when an unknown was popularised.",
+  tagline: "Which Cause Interests You",
+  title: "Top Causes",
+  text: "Our organization focuses on various causes that aim to uplift communities and support those in need. Explore the categories below to find out how you can contribute.",
   categoriesUser,
   signIn,
   categories: [
     {
       id: 1,
-      icon: "flaticon-networking",
-      title: "Technology",
+      icon: "flaticon-stethoscope",
+      title: "Health & Wellness",
     },
     {
       id: 2,
-      icon: "flaticon-photograph",
-      title: "Film & Videos",
+      icon: "flaticon-translation",
+      title: "Education & Literacy",
     },
     {
       id: 3,
-      icon: "flaticon-translation",
-      title: "Education",
+      icon: "flaticon-skincare",
+      title: "Environmental Conservation",
     },
     {
       id: 4,
-      icon: "flaticon-stethoscope",
-      title: "Medical",
+      icon: "flaticon-photograph",
+      title: "Community Development",
     },
     {
       id: 5,
-      icon: "flaticon-skincare",
-      title: "Fashion",
+      icon: "flaticon-design",
+      title: "Child Welfare",
     },
     {
       id: 6,
-      icon: "flaticon-design",
-      title: "Design",
+      icon: "flaticon-networking",
+      title: "Human Rights",
     },
   ],
 };

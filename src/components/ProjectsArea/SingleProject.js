@@ -3,16 +3,30 @@ import Link from "next/link";
 import React from "react";
 
 const SingleProject = ({ project = {} }) => {
-  const { image, category, date, title, goal, raised } = project;
+  const { 
+    eventName,
+    eventType,
+    startDate,
+    endDate, 
+    location,
+    capacity,
+    participantsRegistered,
+    featuredImage,
+    status
+  } = project;
+
+  const formattedStartDate = new Date(startDate).toLocaleDateString();
+  const percentageFilled = Math.min((participantsRegistered / capacity) * 100, 100);
 
   return (
-    <div className="explore-projects-item mt-30">
+    <div className="explore-projects-item mt-30" style={{cursor: 'pointer'}}>
       <div className="explore-projects-thumb">
         <Image
-          src={image.src}
-          alt="explore-projects"
-          width={100}
-          height={100}
+          src={featuredImage}
+          alt={eventName}
+          width={750}  // Adjusted width for a larger image
+          height={225}
+          style={{objectFit: 'cover'}}
         />
         <Link href="#">
           <i className="fa fa-heart"></i>
@@ -20,26 +34,26 @@ const SingleProject = ({ project = {} }) => {
       </div>
       <div className="explore-projects-content">
         <div className="item d-flex align-items-center">
-          <span>{category}</span>
+          <span>{eventType}</span>
           <p>
-            <i className="fa fa-clock-o"></i> {date}
+            <i className="fa fa-clock-o"></i> {formattedStartDate}
           </p>
         </div>
         <Link href="/single-project">
-          <h3 className="title">{title}</h3>
+          <h3 className="title">{eventName}</h3>
         </Link>
         <div className="projects-range">
           <div className="projects-range-content">
             <ul>
-              <li>Raised:</li>
-              <li>{raised}%</li>
+              <li>Registered:</li>
+              <li>{percentageFilled.toFixed(0)}%</li>
             </ul>
             <div className="range"></div>
           </div>
         </div>
         <div className="projects-goal">
           <span>
-            Goal: <span>{goal} USD</span>
+            Capacity: <span>{capacity} seats</span>
           </span>
         </div>
       </div>
