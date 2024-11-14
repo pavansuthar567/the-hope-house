@@ -1,16 +1,17 @@
-import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import { combineReducers, configureStore } from "@reduxjs/toolkit";
 
-import user from './slices/userSlice';
-import faqs from './slices/faqsSlice';
-import event from './slices/eventSlice';
-import quote from './slices/quoteSlice';
-import common from './slices/commonSlice';
-import gallery from './slices/gallerySlice';
-import volunteer from './slices/volunteerSlice';
-import teamMembers from './slices/teamMembersSlice';
-import testimonial from './slices/testimonialSlice';
-import recognition from './slices/recognitionSlice';
-import blog from './slices/blogSlice';
+import user from "./slices/userSlice";
+import faqs from "./slices/faqsSlice";
+import event from "./slices/eventSlice";
+import quote from "./slices/quoteSlice";
+import common from "./slices/commonSlice";
+import gallery from "./slices/gallerySlice";
+import volunteer from "./slices/volunteerSlice";
+import teamMembers from "./slices/teamMembersSlice";
+import testimonial from "./slices/testimonialSlice";
+import recognition from "./slices/recognitionSlice";
+import blog from "./slices/blogSlice";
+import dashboard from "./slices/dashboardSlice";
 
 // ----------------------------------------------------------------------
 
@@ -26,6 +27,7 @@ const reducers = combineReducers({
   recognition,
   testimonial,
   blog,
+  dashboard,
 });
 
 // ----------------------------------------------------------------------

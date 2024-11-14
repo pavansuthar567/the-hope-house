@@ -28,16 +28,16 @@ const TeamItem = ({ team = {} }) => {
   );
 
   return (
-    <Col lg={4} md={7}>
+    <Col lg={3} md={6}>
       <div className="team-item mt-30">
         <div className="team-thumb">
           <Image
             src={profilePictureUrl}
             alt={`${firstName} ${lastName}`}
-            width={370}
-            height={488}
+            width={270}
+            height={360}
             priority // Optimize loading
-            style={{ width: "370px", height: "488px" }}
+            style={{ width: "270px", height: "360px", objectFit: "cover" }}
             className="img-fluid"
           />
           <div className="share">

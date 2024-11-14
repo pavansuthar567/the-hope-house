@@ -1,11 +1,13 @@
 "use client";
 import { projectsArea } from "@/data/projectsArea";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import SwiperCore, { Autoplay, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Title from "../Reuseable/Title";
 import SingleProject from "./SingleProject";
+import { useDispatch, useSelector } from "react-redux";
+import { getEvents } from "src/_services/events.service";
 
 SwiperCore.use([Autoplay, Pagination]);
 
@@ -39,7 +41,7 @@ const options = {
   },
 };
 
-const { tagline, title, projects } = projectsArea;
+const { tagline, title } = projectsArea;
 
 const ProjectsArea = ({ className = "" }) => {
   const [domLoaded, setDOMLoaded] = useState(false);
@@ -47,6 +49,17 @@ const ProjectsArea = ({ className = "" }) => {
   useEffect(() => {
     setDOMLoaded(true);
   }, []);
+
+  const dispatch = useDispatch();
+  const { eventList: events = [] } = useSelector(({ event }) => event);
+
+  const loadData = useCallback(() => {
+    dispatch(getEvents());
+  }, [dispatch]);
+
+  useEffect(() => {
+    loadData();
+  }, [loadData]);
 
   return (
     <section className={`explore-projects-area ${className}`}>
@@ -60,9 +73,9 @@ const ProjectsArea = ({ className = "" }) => {
           {domLoaded && (
             <Swiper {...options}>
               <div className="swiper-wrapper">
-                {projects?.slice(0, 4)?.map((project) => (
-                  <SwiperSlide key={`${project?.id}-${project.title}`}>
-                    <SingleProject project={project} />
+                {events?.slice(0, 4)?.map((event) => (
+                  <SwiperSlide key={`${event?._id}-${event?.eventName}`}>
+                    <SingleProject project={event} />
                   </SwiperSlide>
                 ))}
               </div>
