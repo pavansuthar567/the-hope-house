@@ -1,6 +1,7 @@
 import bg from "@/images/footer-bg.jpg";
 import shape from "@/images/footer-shape.png";
-import logo from "@/images/logo-2.png";
+// import logo from "@/images/logo-2.png";
+import logo from "@/images/thh-logo-1.png";
 
 export const socials2 = [
   {

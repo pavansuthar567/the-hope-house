@@ -20,8 +20,12 @@ const SiteFooter = () => {
         <Row>
           <Col lg={4} md={6} sm={8}>
             <div className="footer-about mt-30">
-              <Link href="/">
-                <Image src={logo.src} alt="" />
+              <Link href="/" style={{ backgroundColor: "#674df0" }}>
+                <Image
+                  src={logo.src}
+                  alt="logo"
+                  style={{ maxWidth: "250px", height: "50px" }}
+                />
               </Link>
               <p>{text}</p>
               <ul>

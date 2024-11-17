@@ -97,14 +97,14 @@ const projects = [
 ];
 
 export const projectsArea = {
-  tagline: "Businesses You Can Back",
-  title: "Explore Projects",
+  tagline: "Make a Difference Through Our Events",
+  title: "Explore Events",
   projects,
 };
 
 export const exploreProjects = {
-  tagline: "Businesses You Can Back",
-  title: "Explore Projects",
+  tagline: "Make a Difference Through Our Events",
+  title: "Explore Events",
   projects: [
     {
       id: 1,

@@ -56,8 +56,23 @@ const SingleBanner = ({
               <Link
                 className={`main-btn${isActive ? " animated zoomIn" : ""}`}
                 href="/single-project"
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.color = "white";
+                  e.currentTarget.querySelector("i").style.color = "white";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.color = "#674df0";
+                  e.currentTarget.querySelector("i").style.color = "#674df0";
+                }}
               >
-                Start a Project
+                <i
+                  className="fa fa-heart"
+                  style={{
+                    color: "#674df0",
+                    marginRight: "5px",
+                  }}
+                ></i>{" "}
+                Donate Now
               </Link>
             </div>
           </Col>
