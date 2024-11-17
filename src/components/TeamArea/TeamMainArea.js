@@ -5,7 +5,7 @@ import TeamItem from "./TeamItem";
 import { useDispatch, useSelector } from "react-redux";
 import { getTeamMembers } from "src/_services/team-members.service";
 
-const TeamMainArea = ({ className = "", count = 3 }) => {
+const TeamMainArea = ({ className = "", count = 8 }) => {
   const dispatch = useDispatch();
 
   const { teamMembersList: teamMembers = [] } = useSelector(

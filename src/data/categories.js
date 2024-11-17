@@ -44,9 +44,14 @@ import signIn from "@/images/singin.png";
 // };
 export const categoriesSection = {
   bg,
-  tagline: "Which Cause Interests You",
-  title: "Top Causes",
-  text: "Our organization focuses on various causes that aim to uplift communities and support those in need. Explore the categories below to find out how you can contribute.",
+  tagline: "Categories We Serve",
+  title: "Who We Are",
+  text: "The Hope House is a compassionate NGO committed to creating a positive impact in the lives of underprivileged individuals. We strive to foster a world of equality, support, and opportunity for everyone.",
+  title2: "What We Do",
+  text2:
+    "We focus on empowering communities through education, healthcare, and sustainable development programs. Our initiatives aim to bring hope, transform lives, and inspire change.",
+  // title: "Top Causes",
+  // text: "Our organization focuses on various causes that aim to uplift communities and support those in need. Explore the categories below to find out how you can contribute.",
   categoriesUser,
   signIn,
   categories: [

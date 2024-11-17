@@ -17,9 +17,9 @@ const MainHeaderItem = ({
       <Col lg={12}>
         <div className="main-header-item">
           <div className="main-header-menus d-flex justify-content-between align-items-center">
-            <div className="header-logo">
+            <div className="header-logo" style={{ backgroundColor: '#674df0' }}>
               <Link href="/">
-                <Image src={logo.src} alt="logo" />
+                <Image src={logo.src} alt="logo" style={{ maxWidth: '250px', height: '50px' }} />
               </Link>
             </div>
             <HeaderMenu navItems={navItems} />

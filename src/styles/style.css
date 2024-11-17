@@ -1793,14 +1793,32 @@ p {
     4.CATEGORIES css 
 ===========================*/
 .categories-area {
-  padding-top: 112px;
-  padding-bottom: 128px;
+  /* padding-top: 112px; */
+  padding-top: 84px;
+  /* padding-bottom: 128px; */
+  padding-bottom: 56px;
   background-size: 100% 100%;
 }
 .categories-area .categories-content {
   margin-top: -10px;
 }
-.categories-area .categories-content span {
+.categories-area .categories-box .tagline {
+  font-size: 18px;
+  color: #d1c8fe;
+  position: relative;
+  padding-left: 14px;
+}
+.categories-area .categories-box .tagline::before {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 6px;
+  width: 6px;
+  background: #29f0b4;
+}
+/* .categories-area .categories-content span {
   font-size: 18px;
   color: #d1c8fe;
   position: relative;
@@ -1815,7 +1833,7 @@ p {
   height: 6px;
   width: 6px;
   background: #29f0b4;
-}
+} */
 .categories-area .categories-content .title {
   font-size: 60px;
   color: #fff;
@@ -1836,12 +1854,18 @@ p {
   font-size: 18px;
   color: #d1c8fe;
   line-height: 34px;
-  padding-top: 39px;
+  /* padding-top: 39px; */
+  padding-top: 16px;
 }
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
   .categories-area .categories-content p {
     font-size: 16px;
   }
+}
+.categories-area .categories-content .title {
+  padding-left: 56px;
+  position: relative;
+  margin-top: 22px;
 }
 .categories-area .categories-content .item {
   padding-left: 66px;
@@ -1852,6 +1876,16 @@ p {
   .categories-area .categories-content .item {
     padding-left: 35px;
   }
+}
+.categories-area .categories-content .title::before {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 7px;
+  height: 75px;
+  background: #29f0b4;
 }
 .categories-area .categories-content .item::before {
   position: absolute;
