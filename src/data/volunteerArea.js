@@ -1,0 +1,76 @@
+export const volunteerFormArea = {
+  tagline: "Join Us as a Volunteer",
+  title: "Volunteer Application",
+  inputs: [
+    {
+      id: 1,
+      type: "text",
+      placeholder: "First Name",
+      name: "firstName",
+    },
+    {
+      id: 2,
+      type: "text",
+      placeholder: "Last Name",
+      name: "lastName",
+    },
+    {
+      id: 3,
+      type: "email",
+      placeholder: "Email Address",
+      name: "email",
+    },
+    {
+      id: 4,
+      type: "text",
+      placeholder: "Phone Number",
+      name: "phoneNumber",
+    },
+    {
+      id: 5,
+      type: "text",
+      placeholder: "City",
+      name: "city",
+    },
+    {
+      id: 6,
+      type: "text",
+      placeholder: "State",
+      name: "state",
+    },
+    {
+      id: 7,
+      type: "select",
+      placeholder: "Gender",
+      name: "gender",
+      options: ["Male", "Female", "Other"],
+    },
+    {
+      id: 8,
+      type: "select",
+      placeholder: "Availability",
+      name: "availability",
+      options: ["Full-time", "Part-time", "Contract"],
+    },
+    {
+      id: 9,
+      type: "text",
+      placeholder: "Yrs of Experience",
+      name: "experience",
+    },
+    {
+      id: 10,
+      type: "select",
+      placeholder: "Skills",
+      name: "skills",
+      options: [
+        "Poster/Graphic Design",
+        "Video Editing/Production",
+        "Social Media Management",
+        "Event Coordination",
+        "Teaching or Mentoring",
+        "Content writer",
+      ],
+    },
+  ],
+};

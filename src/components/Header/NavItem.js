@@ -40,7 +40,7 @@ const NavItem = ({ navItem = {}, mobile = false, activeId, handleActive }) => {
       {subNavItems.length > 0 && (
         <ul className={`sub-menu ${mobile && !active ? "d-none" : "d-block"}`}>
           {subNavItems.map(({ href = "", name, id }) => (
-            <li key={id}>
+            <li key={`nav_item_${name}_${id}`}>
               <Link onClick={() => mobile && toggleMenu(false)} href={href}>
                 {name}
               </Link>

@@ -7,6 +7,7 @@ const FunFactsItem = ({ fact = {} }) => {
 
   return (
     <Col lg={3} md={6}>
+      {/* <Col lg={2.4} md={4} sm={6}> */}
       <div className="fun-facts-item text-center">
         <div className="icon">
           <i className={icon}></i>

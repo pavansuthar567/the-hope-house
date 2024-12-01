@@ -21,7 +21,7 @@ const ContactInfoArea = () => {
                 {lists.length > 0 && (
                   <ul>
                     {lists.map((list, i) => (
-                      <li key={i}>{list}</li>
+                      <li key={i}>{list === '' ? '\u00A0' : list}</li>
                     ))}
                   </ul>
                 )}

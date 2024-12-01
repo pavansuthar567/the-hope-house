@@ -1,20 +1,20 @@
-import { toast } from 'react-toastify';
+import { toast } from "react-toastify";
 
 import {
   setVolunteerLoading,
   setVolunteerList,
   setCrudVolunteerLoading,
   setSelectedVolunteer,
-} from 'src/store/slices/volunteerSlice';
-import { fhelper } from 'src/_helpers';
-import axios from 'axios';
-import { skills } from 'src/_helpers/constants';
-import { toastError } from '.';
+} from "src/store/slices/volunteerSlice";
+import { fhelper } from "src/_helpers";
+import axios from "axios";
+import { skills } from "src/_helpers/constants";
+import { toastError } from ".";
 
 export const getVolunteers = () => async (dispatch) => {
   try {
     dispatch(setVolunteerLoading(true));
-    const res = await axios.get('volunteer');
+    const res = await axios.get("volunteer");
     const updated = res?.data?.data?.map((x, i) => ({ srNo: i + 1, ...x }));
     await dispatch(setVolunteerList(fhelper.sortByField(updated) || []));
     return true;
@@ -31,7 +31,7 @@ export const deleteVolunteer = (id) => async (dispatch) => {
     dispatch(setCrudVolunteerLoading(true));
     const res = await axios.delete(`volunteer/${id}`);
     if (res) {
-      toast.success('Volunteer deleted successfully');
+      toast.success("Volunteer deleted successfully");
       return true;
     } else return false;
   } catch (e) {
@@ -45,10 +45,12 @@ export const deleteVolunteer = (id) => async (dispatch) => {
 export const createVolunteer = (payload) => async (dispatch) => {
   try {
     dispatch(setCrudVolunteerLoading(true));
-    const res = await axios.post('volunteer', payload);
+    const res = await axios.post("volunteer", payload);
 
     if (res) {
-      toast.success('Volunteer inserted successfully');
+      toast.success(
+        "Thank you for your application! Your volunteer request has been submitted successfully."
+      );
       return true;
     }
     return false;
@@ -69,10 +71,10 @@ export const updateVolunteer = (obj) => async (dispatch) => {
         const res = await axios.put(`volunteer/${_id}`, payload);
 
         if (res) {
-          toast.success('Volunteer updated successfully');
+          toast.success("Volunteer updated successfully");
           return true;
         } else {
-          toast.success('Volunteer Id is required');
+          toast.success("Volunteer Id is required");
           return false;
         }
       }
@@ -97,7 +99,7 @@ export const getVolunteer = (id) => async (dispatch) => {
       const skillsVals = skills?.map((x) => x?.value);
       if (!skillsVals?.includes(data?.skills?.[0])) {
         data.otherSkill = data?.skills?.[0];
-        data.skills = ['other'];
+        data.skills = ["other"];
       }
       dispatch(setSelectedVolunteer(data));
       return res;

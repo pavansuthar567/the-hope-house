@@ -40,23 +40,24 @@ export const contactInfoArea = [
   {
     id: 1,
     icon: "flaticon-entrepreneur-1",
-    title: "About Krowd",
-    text: "Morbi ut tellus ac leo molestie luctus nec \n vehicula sed justo onec tempor rhoncus \n volutpat ras lorem.",
+    title: "About The Hope House",
+    text: "The Hope House empowers communities and supports those in need through initiatives that foster growth.",
   },
   {
     id: 2,
     icon: "flaticon-location",
-    title: "About Krowd",
+    title: "Locate The Hope House",
     lists: [
-      "66 Road Broklyn Street, 600 New York.",
-      "United States of America",
-      "P.O Box 0000",
+      "Plot 10 C, Shantinath Nagar",
+      "Pratap Nagar Road, Jodhpur",
+      "Rajasthan - 342001",
     ],
   },
   {
     id: 3,
     icon: "flaticon-contact",
-    title: "About Krowd",
-    lists: ["needhelp@krowd.com", "info@krowd.com", "666 888 0000"],
+    title: "Contact The Hope House",
+    // lists: ["needhelp@krowd.com", "info@krowd.com", "666 888 0000"],
+    lists: ["thehopehousetrust@gmail.com", "800 593 0712", ""],
   },
 ];

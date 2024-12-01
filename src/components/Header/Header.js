@@ -13,7 +13,7 @@ const Header = ({ className = "" }) => {
 
   return (
     <header className={`header-area ${className}`}>
-      <Container>
+      {/* <Container>
         <Row>
           <Col lg={12}>
             <div className="header-top d-flex justify-content-between align-items-center">
@@ -35,7 +35,7 @@ const Header = ({ className = "" }) => {
             </div>
           </Col>
         </Row>
-      </Container>
+      </Container> */}
       <div className={`main-header${scrollTop ? " sticky" : ""}`}>
         <Container>
           <MainHeaderItem

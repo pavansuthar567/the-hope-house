@@ -20,9 +20,42 @@ const SingleBanner = ({
         isBannerThree ? "banner-3-area align-items-end" : "align-items-center"
       }`}
       style={{
-        backgroundImage: `url(${bg})`,
+        backgroundImage: `url(${"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgN6bX7PLVRuY9RSvLl2roObBtUEbmNPrjQEgSe-HsLIfcszD48NrVGpSmDI0lpdbwWOoN3D9qFf9ifkREmxyhUY0rwcU38ICVUzBCIykzGKvJOkG0wwq456EIXoM_v_n1Q7uVCefmfwsli4n6YknyoPiJZBhOluBmCx_927mT3ruFngx0vTRTXk4ybgg/s1600-rw/beeautiful-sunset-illustration-1212023.png"})`,
       }}
+      // style={{
+      //   position: "relative",
+      //   overflow: "hidden",
+      // }}
     >
+      {/* <div
+        className="video-background"
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          overflow: "hidden",
+          zIndex: -1,
+        }}
+      >
+        <iframe
+          src="https://www.youtube.com/embed/0CbFrom3Qkk?autoplay=1&mute=1&loop=1&playlist=0CbFrom3Qkk"
+          frameBorder="0"
+          allow="autoplay; encrypted-media"
+          allowFullScreen
+          title="Background Video"
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            pointerEvents: "none", // Prevent interaction with the iframe
+          }}
+        ></iframe>
+      </div> */}
       <Container>
         <Row
           className={

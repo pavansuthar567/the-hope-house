@@ -31,9 +31,9 @@ const SingleProject = ({ project = {} }) => {
           height={225}
           style={{ objectFit: "cover" }}
         />
-        <Link href="#">
+        {/* <Link href="#">
           <i className="fa fa-heart"></i>
-        </Link>
+        </Link> */}
       </div>
       <div className="explore-projects-content">
         <div className="item d-flex align-items-center">
@@ -45,7 +45,7 @@ const SingleProject = ({ project = {} }) => {
         <Link href="/single-project">
           <h3 className="title">{eventName}</h3>
         </Link>
-        <div className="projects-range">
+        {/* <div className="projects-range">
           <div className="projects-range-content">
             <ul>
               <li>Registered:</li>
@@ -58,8 +58,8 @@ const SingleProject = ({ project = {} }) => {
           <span>
             Capacity: <span>{capacity} seats</span>
           </span>
-        </div>
-        <div className="d-flex flex-column flex-md-row justify-content-between align-items-center mt-3">
+        </div> */}
+        <div className="d-flex flex-column flex-md-row justify-content-between align-items-center">
           <Link
             href="https://wa.me/yourwhatsapplink"
             className="whatsapp-link"
@@ -70,20 +70,22 @@ const SingleProject = ({ project = {} }) => {
               borderRadius: "5px",
               display: "flex",
               alignItems: "center",
+              justifyContent: "center",
               height: "40px",
+              width: "75px",
               transition: "background-color 0.3s",
               fontSize: "14px",
-            }} 
+            }}
             onMouseEnter={(e) => {
               e.currentTarget.style.backgroundColor = "#29f0b4";
               e.currentTarget.querySelector(".fa-whatsapp").style.color =
                 "black";
-            }} 
+            }}
             onMouseLeave={(e) => {
               e.currentTarget.style.backgroundColor = "black";
               e.currentTarget.querySelector(".fa-whatsapp").style.color =
                 "#29f0b4";
-            }} 
+            }}
           >
             <i
               className="fa fa-whatsapp"
@@ -93,7 +95,11 @@ const SingleProject = ({ project = {} }) => {
           <Link
             className="main-btn mt-2 mt-md-0"
             href="/donate"
-            style={{ fontSize: "14px", padding: "0px 20px", marginLeft: "10px" }} // Added margin for spacing
+            style={{
+              fontSize: "14px",
+              padding: "0px 20px",
+              marginLeft: "10px",
+            }} // Added margin for spacing
             onMouseEnter={(e) => {
               e.currentTarget.style.color = "white";
               e.currentTarget.querySelector(".fa-heart").style.color = "white";

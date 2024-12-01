@@ -13,6 +13,7 @@ import "@/styles/default.css";
 import "@/styles/style.css";
 import { apiUrl } from "src/_helpers";
 import axios from "axios";
+import 'react-toastify/dist/ReactToastify.css';
 
 axios.defaults.baseURL = apiUrl;
 
