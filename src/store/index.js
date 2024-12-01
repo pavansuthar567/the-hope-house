@@ -2,6 +2,7 @@ import { combineReducers, configureStore } from "@reduxjs/toolkit";
 
 import user from "./slices/userSlice";
 import faqs from "./slices/faqsSlice";
+import home from "./slices/homeSlice";
 import event from "./slices/eventSlice";
 import quote from "./slices/quoteSlice";
 import common from "./slices/commonSlice";
@@ -18,6 +19,7 @@ import dashboard from "./slices/dashboardSlice";
 const reducers = combineReducers({
   faqs,
   user,
+  home,
   event,
   quote,
   common,

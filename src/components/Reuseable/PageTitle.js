@@ -7,6 +7,10 @@ const PageTitle = ({ title = "", page = "", parent = "" }) => {
   const bgs = {
     // FAQs: "https://www.andovercorp.com/content/uploads/FAQ.png",
     FAQs: "https://media.licdn.com/dms/image/C4E12AQEOCRBXE5yUhA/article-cover_image-shrink_720_1280/0/1619501870929?e=2147483647&v=beta&t=By9px4peK-i3FL4ityNfFtN8v70KyJ4u1ruhD9TokR0",
+    Contact:
+      "https://krowd-nextjs.vercel.app/_next/static/media/page-title-bg.e4241f75.jpg",
+    Volunteer:
+      "https://c0.wallpaperflare.com/preview/959/174/509/volunteer-activity-arms-raised-care.jpg",
   };
 
   return (

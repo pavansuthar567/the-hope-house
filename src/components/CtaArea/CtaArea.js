@@ -17,7 +17,7 @@ const CtaArea = () => {
             >
               <div className="cta-content d-block d-lg-flex justify-content-between align-items-center">
                 <h3 className="title">{title}</h3>
-                <Link className="main-btn main-btn-2" href="#">
+                <Link className="main-btn main-btn-2" href="/volunteer">
                   Make it happen
                 </Link>
               </div>

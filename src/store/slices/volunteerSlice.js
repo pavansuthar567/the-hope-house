@@ -10,8 +10,8 @@ export const volunteerInitDetails = {
     state: '',
   },
   gender: '',
-  skills: [],
-  otherSkill: '',
+  skills: '',
+  // otherSkill: '',
   availability: '',
   experience: '',
 };
