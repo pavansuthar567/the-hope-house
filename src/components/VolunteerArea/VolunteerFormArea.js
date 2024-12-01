@@ -34,6 +34,7 @@ const VolunteerFormArea = () => {
         ...values,
         skills: [values?.skills],
         address: { city: values?.city, state: values?.state },
+        fromSite: true,
       };
       delete payload?.city;
       delete payload?.state;
