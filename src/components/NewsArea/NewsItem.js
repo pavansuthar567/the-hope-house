@@ -23,10 +23,10 @@ const NewsItem = ({ news = {}, index = 0, newsTwo = false }) => {
           <span>{moment(publishedDate).format("D MMM, YYYY")}</span>
           <ul>
             <li>
-              <i className="fa fa-user-circle"></i> {author?.split(" ")?.[0]}
+              <i className="fa fa-user-circle"></i> {author}
             </li>
             <li>
-              <i className="fa fa-comments-o"></i> {comments?.length} Comments
+              {/* <i className="fa fa-comments-o"></i> {comments?.length} Comments */}
             </li>
           </ul>
           <h3 className="title">{title}</h3>

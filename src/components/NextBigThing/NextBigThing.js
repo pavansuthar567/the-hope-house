@@ -12,7 +12,10 @@ const NavItem = ({ tab = {}, current, handleCurrent }) => {
   return (
     <li className="nav-item" role="presentation">
       <Link
-        onClick={() => handleCurrent(id)}
+        onClick={(e) => {
+          e.preventDefault();
+          handleCurrent(id);
+        }}
         className={`nav-link cursor-pointer${active ? " active" : ""}`}
         role="tab"
         href="#"

@@ -88,3 +88,39 @@ const ProjectsArea = ({ className = "" }) => {
 };
 
 export default ProjectsArea;
+
+// Filter Dropdown
+{
+  /* <Row className="justify-content-center">
+<Col lg={8}>
+  <div className="conact-form-item">
+    <Row>
+      <Col key={`form_col_id}`} lg={6} md={6}>
+        <div className="input-box mt-20">
+          <select
+            name={name}
+            // onChange={formik.handleChange}
+            // onBlur={formik.handleBlur}
+            // value={formik.values[name] || ""}
+          >
+            <option value="" disabled>
+              {"placeholder"} *
+            </option>
+            {options.map((option, index) => (
+              <option
+                key={`${option}_${index}`}
+                value={option}
+                className="text-gray-700"
+              >
+                {option}
+              </option>
+            ))}
+          </select>
+        </div>
+      </Col>
+    </Row>
+  </div>
+  <p className="form-message"></p>
+</Col>
+</Row> */
+}

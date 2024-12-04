@@ -29,7 +29,7 @@ const Home = () => {
       <BrandArea />
       <TestimonialsArea />
       <TeamArea />
-      <TeamMainArea />
+      <TeamMainArea count={8} />
       <NewsArea />
       <GuideArea />
     </Layout>

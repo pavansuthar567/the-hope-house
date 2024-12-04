@@ -5,6 +5,7 @@ import axios from 'axios';
 import { skills } from 'src/_helpers/constants';
 import {
   setCrudTeamMembersLoading,
+  setFilteredTeamMembersList,
   setSelectedTeamMembers,
   setTeamMembersList,
   setTeamMembersLoading,
@@ -16,8 +17,12 @@ export const getTeamMembers = () => async (dispatch) => {
   try {
     dispatch(setTeamMembersLoading(true));
     const res = await axios.get('team-members');
+    
     const updated = res?.data?.data?.map((x, i) => ({ srNo: i + 1, ...x }));
-    await dispatch(setTeamMembersList(fhelper.sortByField(updated) || []));
+    const members = fhelper.sortByField(updated) || [];
+
+    await dispatch(setTeamMembersList(members));
+    await dispatch(setFilteredTeamMembersList(members));
     return true;
   } catch (e) {
     toastError(e);

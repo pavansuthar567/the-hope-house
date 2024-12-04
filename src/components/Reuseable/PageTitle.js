@@ -1,4 +1,4 @@
-import bg from "@/images/page-title-bg.jpg";
+// import bg from "@/images/page-title-bg.jpg";
 import Link from "next/link";
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
@@ -11,6 +11,15 @@ const PageTitle = ({ title = "", page = "", parent = "" }) => {
       "https://krowd-nextjs.vercel.app/_next/static/media/page-title-bg.e4241f75.jpg",
     Volunteer:
       "https://c0.wallpaperflare.com/preview/959/174/509/volunteer-activity-arms-raised-care.jpg",
+    "Team Members":
+      "https://img.freepik.com/premium-photo/people-raising-hands-air-party-background_968882-2091.jpg",
+    Gallery:
+      "https://images.hdqwalls.com/wallpapers/looking-far-away-4k-lb.jpg",
+    About:
+      "https://png.pngtree.com/background/20210710/original/pngtree-positive-energy-youth-poster-background-material-picture-image_1056185.jpg",
+    Events:
+      "https://png.pngtree.com/background/20210711/original/pngtree-opening-event-poster-background-picture-image_1097803.jpg",
+    News: "https://wallpapers.com/images/hd/composer-workspace-blogging-backdrop-4ferx6eq7jp9z9im.jpg",
   };
 
   return (
