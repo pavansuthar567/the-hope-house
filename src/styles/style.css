@@ -7811,3 +7811,30 @@ p {
     height: 300px;
   }
 }
+
+.caption {
+  position: absolute;
+  bottom: 30px;
+  width: auto;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.caption-text {
+  font-size: 16px;
+  color: #1b1f2e;
+}
+
+.portfolio-overlay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.portfolio-item:hover .portfolio-overlay {
+  opacity: 1;
+}

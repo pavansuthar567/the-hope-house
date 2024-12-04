@@ -10,7 +10,10 @@ const TeamMembers = () => {
     <Layout>
       <Header />
       <PageTitle title="Team Members" parent="pages" />
-      <TeamMainArea className="about-team-main-area team-page-area" count={6} />
+      <TeamMainArea
+        className="about-team-main-area team-page-area"
+        isPagination={true}
+      />
       <CtaArea />
     </Layout>
   );

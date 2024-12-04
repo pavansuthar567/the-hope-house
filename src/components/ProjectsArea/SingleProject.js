@@ -7,19 +7,19 @@ const SingleProject = ({ project = {} }) => {
     eventName,
     eventType,
     startDate,
-    endDate,
-    location,
-    capacity,
-    participantsRegistered,
+    // endDate,
+    // location,
+    // capacity,
+    // participantsRegistered,
     featuredImage,
-    status,
+    // status,
   } = project;
 
   const formattedStartDate = new Date(startDate).toLocaleDateString();
-  const percentageFilled = Math.min(
-    (participantsRegistered / capacity) * 100,
-    100
-  );
+  // const percentageFilled = Math.min(
+  //   (participantsRegistered / capacity) * 100,
+  //   100
+  // );
 
   return (
     <div className="explore-projects-item mt-30" style={{ cursor: "pointer" }}>

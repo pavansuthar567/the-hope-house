@@ -48,13 +48,13 @@ export const aboutAreaThree = {
 
 export const aboutIntroduction = {
   thumb: thumb3,
-  tagline: "Our Introduction",
-  title: "Learn About Our Company",
+  tagline: "Our Mission",
+  title: "Empower Communities",
   count: 8000,
-  text: "There are many variations of passages of available but the majority have suffered alteration in some form, by injected humou or randomised words.",
+  text: "We are dedicated to uplifting underprivileged communities across India through education, healthcare, and sustainable development.",
   items: [
-    "Discover how to plan, create, and manage your crowdfunding campaign",
-    "Discover how to plan, create, and manage your crowdfunding campaign",
+    "Learn how we provide educational resources to children in rural areas",
+    "Discover our initiatives for women's empowerment and skill development",
   ],
-  bottomText: "Satisfied Customers",
+  bottomText: "Empowered Communities",
 };

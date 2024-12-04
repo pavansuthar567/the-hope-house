@@ -1,23 +1,23 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 export const teamMembersInitDetails = {
-  firstName: '',
-  lastName: '',
-  email: '',
-  phoneNumber: '',
+  firstName: "",
+  lastName: "",
+  email: "",
+  phoneNumber: "",
   address: {
-    street: '',
-    city: '',
-    state: '',
-    zipCode: '',
+    street: "",
+    city: "",
+    state: "",
+    zipCode: "",
   },
-  role: '',
-  bio: '',
-  dateOfJoining: '',
+  role: "",
+  bio: "",
+  dateOfJoining: "",
   socialMediaLinks: {
-    linkedIn: '',
-    twitter: '',
-    instagram: '',
+    linkedIn: "",
+    twitter: "",
+    instagram: "",
   },
   profilePictureUrl: [],
   previewProfilePic: [],
@@ -26,6 +26,7 @@ export const teamMembersInitDetails = {
 
 const initialState = {
   teamMembersList: [],
+  filteredTeamMembersList: [],
   perPageCount: 12,
   teamMembersLoading: false,
   crudTeamMembersLoading: false,
@@ -34,11 +35,14 @@ const initialState = {
 };
 
 const teamMembersSlice = createSlice({
-  name: 'teamMembers',
+  name: "teamMembers",
   initialState,
   reducers: {
     setTeamMembersList: (state, action) => {
       state.teamMembersList = action.payload;
+    },
+    setFilteredTeamMembersList: (state, action) => {
+      state.filteredTeamMembersList = action.payload;
     },
     setPerPageCount: (state, action) => {
       state.perPageCount = action.payload;
@@ -60,6 +64,7 @@ const teamMembersSlice = createSlice({
 
 export const {
   setTeamMembersList,
+  setFilteredTeamMembersList,
   setPerPageCount,
   setTeamMembersLoading,
   setSelectedTeamMembers,
