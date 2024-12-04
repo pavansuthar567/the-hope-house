@@ -4,7 +4,7 @@ import OffCanvasMenu from "../Header/OffCanvasMenu";
 import SearchPopup from "../Header/SearchPopup";
 import SiteFooter from "../SiteFooter/SiteFooter";
 import ScrollToTop from "./ScrollToTop";
-import Toast from "../Toast/toast";
+import Toast from "../Toast/Toast";
 
 const Layout = ({ children }) => {
   return (
