@@ -7,24 +7,28 @@ export const contactFormArea = {
       type: "text",
       placeholder: "First Name",
       name: "fname",
+      required: true,
     },
     {
       id: 2,
       type: "text",
       placeholder: "Last Name",
       name: "lname",
+      required: true,
     },
     {
       id: 3,
       type: "email",
       placeholder: "Email Address",
       name: "email",
+      required: true,
     },
     {
       id: 4,
       type: "text",
       placeholder: "Phone Number",
       name: "number",
+      required: true,
     },
     {
       id: 5,
@@ -32,6 +36,7 @@ export const contactFormArea = {
       name: "message",
       cols: 30,
       rows: 10,
+      required: true,
     },
   ],
 };

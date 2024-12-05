@@ -13,6 +13,7 @@ import testimonial from "./slices/testimonialSlice";
 import recognition from "./slices/recognitionSlice";
 import blog from "./slices/blogSlice";
 import dashboard from "./slices/dashboardSlice";
+import message from "./slices/messageSlice";
 
 // ----------------------------------------------------------------------
 
@@ -30,6 +31,7 @@ const reducers = combineReducers({
   testimonial,
   blog,
   dashboard,
+  message,
 });
 
 // ----------------------------------------------------------------------
