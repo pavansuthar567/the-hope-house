@@ -13,6 +13,7 @@ export const eventInitDetails = {
   capacity: 0,
   participantsRegistered: 0,
   registrationLink: '',
+  content: '',
   eventType: 'Virtual',
   featuredImage: [],
   previewfeaturedImage: [],

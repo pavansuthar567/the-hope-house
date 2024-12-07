@@ -77,7 +77,7 @@ const NextBigThing = ({ className = "" }) => {
               <p>{text}</p>
               <div className="next-big-thing-list">
                 <div className="thumb">
-                  <Image src={image.src} alt="" />
+                  <Image src={image} alt="" width={242} height={241} />
                 </div>
                 <div className="list">
                   <ul>

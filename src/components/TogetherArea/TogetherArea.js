@@ -9,7 +9,7 @@ const TogetherArea = ({ className = "" }) => {
   return (
     <section
       className={`together-area bg_cover ${className}`}
-      style={{ backgroundImage: `url(${bg.src})` }}
+      style={{ backgroundImage: `url(${bg})` }}
     >
       <Container>
         <Row className="justify-content-center">
@@ -17,8 +17,8 @@ const TogetherArea = ({ className = "" }) => {
             <div className="together-content text-center">
               <span>{tagline}</span>
               <h3 className="title">{title}</h3>
-              <Link className="main-btn" href="/single-project">
-                Start a Project
+              <Link className="main-btn" href="/volunteer">
+                Join Us
               </Link>
             </div>
           </Col>

@@ -20,6 +20,8 @@ const PageTitle = ({ title = "", page = "", parent = "" }) => {
     Events:
       "https://png.pngtree.com/background/20210711/original/pngtree-opening-event-poster-background-picture-image_1097803.jpg",
     News: "https://wallpapers.com/images/hd/composer-workspace-blogging-backdrop-4ferx6eq7jp9z9im.jpg",
+    Event:
+      "https://res.cloudinary.com/dlqdosage/image/upload/v1731915408/media/vdcoaqhydjlkzhdmmltp.jpg",
   };
 
   return (

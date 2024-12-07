@@ -6,7 +6,8 @@ const text =
 export const nextBigThing = {
   tagline: "Get to Know Our NGO",
   title: "Support the Next Initiative",
-  image,
+  image:
+    "https://res.cloudinary.com/dlqdosage/image/upload/v1731915199/media/n3ovn1fxjv17y3qpjmdi.jpg",
   text,
   tabs: [
     {
