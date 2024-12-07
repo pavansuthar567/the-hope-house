@@ -9,7 +9,12 @@ const News = () => {
     <Layout>
       <Header />
       <PageTitle title="News" />
-      <NewsArea className="news-2-area news-page-area" newsTwo newsPage />
+      <NewsArea
+        className="news-2-area news-page-area"
+        newsTwo
+        newsPage
+        isPagination={true}
+      />
     </Layout>
   );
 };

@@ -9,7 +9,7 @@ const Projects = () => {
     <Layout>
       <Header />
       <PageTitle title="Events" />
-      <ExploreArea />
+      <ExploreArea isPagination={true} />
     </Layout>
   );
 };
