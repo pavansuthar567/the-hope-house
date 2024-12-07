@@ -11,7 +11,7 @@ const GuideArea = () => {
   return (
     <section
       className="guide-area bg_cover"
-      style={{ backgroundImage: `url(${bg.src})` }}
+      style={{ backgroundImage: `url(${bg})` }}
     >
       <Container>
         <Row className="justify-content-center">

@@ -48,7 +48,7 @@ const footerData = {
     {
       id: 3,
       text: "Get Involved",
-      href: "/get-involved",
+      href: "/volunteer",
     },
     {
       id: 4,

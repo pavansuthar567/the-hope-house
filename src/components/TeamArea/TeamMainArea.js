@@ -1,6 +1,6 @@
-import { teamMainArea } from "@/data/teamArea";
-import React, { useCallback, useEffect, useState } from "react";
-import { Col, Container, Row, Pagination } from "react-bootstrap";
+// import { teamMainArea } from "@/data/teamArea";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
+import { Container, Row } from "react-bootstrap";
 import TeamItem from "./TeamItem";
 import { useDispatch, useSelector } from "react-redux";
 import { getTeamMembers } from "src/_services/team-members.service";
@@ -31,10 +31,12 @@ const TeamMainArea = ({ className = "", count, isPagination = false }) => {
     setCurrentPage(pageNumber);
   };
 
-  const startIndex = (currentPage - 1) * itemsPerPage;
-  const currentItems = isPagination
-    ? filteredTeamMembers.slice(startIndex, startIndex + itemsPerPage)
-    : filteredTeamMembers?.slice(0, count || teamMembers?.length);
+  const currentItems = useMemo(() => {
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    return isPagination
+      ? filteredTeamMembers.slice(startIndex, startIndex + itemsPerPage)
+      : filteredTeamMembers?.slice(0, count || teamMembers?.length);
+  }, [isPagination, filteredTeamMembers, currentPage, count, teamMembers]);
 
   return (
     <div className={`team-main-area ${className}`}>
@@ -44,7 +46,7 @@ const TeamMainArea = ({ className = "", count, isPagination = false }) => {
             <TeamItem key={`teamMembers_${team._id}`} team={team} />
           ))}
         </Row>
-        {isPagination && (
+        {isPagination && filteredTeamMembers?.length > itemsPerPage && (
           <CustomPagination
             currentPage={currentPage}
             totalPages={totalPages}

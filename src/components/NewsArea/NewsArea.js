@@ -1,14 +1,25 @@
-import React, { useCallback, useEffect } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import Title from "../Reuseable/Title";
 import NewsItem from "./NewsItem";
 import { useDispatch, useSelector } from "react-redux";
 import { getBlogs } from "src/_services/blog.service";
+import CustomPagination from "../Pagination/Pagination";
 
-const NewsArea = ({ className = "", newsTwo = false, newsPage = false }) => {
+const itemsPerPage = 6;
+
+const NewsArea = ({
+  className = "",
+  newsTwo = false,
+  newsPage = false,
+  isPagination = false,
+}) => {
   const dispatch = useDispatch();
 
   const { blogList: blogs } = useSelector(({ blog }) => blog);
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const totalPages = Math.ceil(blogs?.length / itemsPerPage);
 
   const loadData = useCallback(() => {
     dispatch(getBlogs());
@@ -17,6 +28,17 @@ const NewsArea = ({ className = "", newsTwo = false, newsPage = false }) => {
   useEffect(() => {
     loadData();
   }, [loadData]);
+
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
+
+  const currentItems = useMemo(() => {
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    return isPagination
+      ? blogs?.slice(startIndex, startIndex + itemsPerPage)
+      : blogs?.slice(0, blogs?.length);
+  }, [currentPage, isPagination, blogs, blogs]);
 
   return (
     <section className={`news-area ${className}`}>
@@ -33,7 +55,7 @@ const NewsArea = ({ className = "", newsTwo = false, newsPage = false }) => {
           </Row>
         )}
         <Row className={newsTwo ? "" : "no-gutters"}>
-          {blogs
+          {currentItems
             ?.filter((blog) => blog?.publishedDate)
             ?.slice(0, newsPage ? undefined : newsTwo ? 3 : 4)
             .map((news, index) => (
@@ -45,6 +67,13 @@ const NewsArea = ({ className = "", newsTwo = false, newsPage = false }) => {
               />
             ))}
         </Row>
+        {isPagination && blogs?.length > itemsPerPage && (
+          <CustomPagination
+            currentPage={currentPage}
+            totalPages={totalPages}
+            onPageChange={handlePageChange}
+          />
+        )}
       </Container>
     </section>
   );
