@@ -1,12 +1,32 @@
 import { similarProjects } from "@/data/projectsArea";
-import React from "react";
+import React, { useCallback, useEffect, useMemo } from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import Title from "../Reuseable/Title";
 import SingleProject from "./SingleProject";
-
-const { tagline, title, projects } = similarProjects;
+import { useDispatch, useSelector } from "react-redux";
+import { getEvents } from "src/_services/events.service";
+import Title from "../Reuseable/Title";
 
 const SimilarProjects = () => {
+  const dispatch = useDispatch();
+  const { eventList: projects = [] } = useSelector(({ event }) => event);
+
+  const { tagline, title } = similarProjects;
+
+  const loadData = useCallback(() => {
+    dispatch(getEvents());
+  }, [dispatch]);
+
+  useEffect(() => {
+    loadData();
+  }, [loadData]);
+
+  const filteredProjects = useMemo(() => {
+    return [...projects]
+      .filter((event) => event.status !== "Cancelled")
+      .sort((a, b) => new Date(a.startDate) - new Date(b.startDate))
+      .slice(0, 3);
+  }, [projects]);
+
   return (
     <section className="explore-projects-area explore-projects-page-area">
       <Container>
@@ -16,8 +36,8 @@ const SimilarProjects = () => {
           </Col>
         </Row>
         <Row className="justify-content-center">
-          {projects.map((project) => (
-            <Col lg={4} md={6} sm={9} key={project.id}>
+          {filteredProjects?.map((project) => (
+            <Col lg={4} md={6} sm={9} key={project._id}>
               <SingleProject project={project} />
             </Col>
           ))}

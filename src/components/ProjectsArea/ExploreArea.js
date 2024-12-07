@@ -19,11 +19,15 @@ const ExploreArea = () => {
     loadData();
   }, [loadData]);
 
+  const filteredEvents = useMemo(() => {
+    return events.filter((event) => event.status !== "Cancelled");
+  }, [events]);
+
   return (
     <section className="explore-area pt-90 pb-120">
       <Container>
         <Row className="justify-content-center">
-          {events?.map((event) => (
+          {filteredEvents?.map((event) => (
             <Col lg={4} md={6} sm={7} key={`${event?._id}-${event?.eventName}`}>
               <SingleProject project={event} />
             </Col>

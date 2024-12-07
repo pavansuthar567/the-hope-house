@@ -4,6 +4,7 @@ import React from "react";
 
 const SingleProject = ({ project = {} }) => {
   const {
+    _id,
     eventName,
     eventType,
     startDate,
@@ -42,7 +43,7 @@ const SingleProject = ({ project = {} }) => {
             <i className="fa fa-clock-o"></i> {formattedStartDate}
           </p>
         </div>
-        <Link href="/single-project">
+        <Link href={`/project/${_id}`}>
           <h3 className="title">{eventName}</h3>
         </Link>
         {/* <div className="projects-range">

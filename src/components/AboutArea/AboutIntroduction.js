@@ -26,7 +26,7 @@ const AboutIntroduction = () => {
           </Col>
           <Col lg={7}>
             <div className="about-introduction-thumb">
-              <Image src={thumb.src} alt="" />
+              <Image src={thumb} alt="" width={570} height={530} />
               <div className="about-introduction-customers">
                 <h3 className="title odometer">
                   <VisibilityCountUp count={count} />

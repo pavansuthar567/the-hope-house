@@ -195,18 +195,18 @@ export const projectDetailsTabBtns = [
     id: "pills-home",
     name: "Story",
   },
-  {
-    id: "pills-profile",
-    name: "FAQs",
-  },
-  {
-    id: "pills-contact",
-    name: "Updates",
-  },
-  {
-    id: "pills-4",
-    name: "Comments",
-  },
+  // {
+  //   id: "pills-profile",
+  //   name: "FAQs",
+  // },
+  // {
+  //   id: "pills-contact",
+  //   name: "Updates",
+  // },
+  // {
+  //   id: "pills-4",
+  //   name: "Comments",
+  // },
 ];
 
 export const projectDetailsStory = {
@@ -328,7 +328,7 @@ export const projectDetailsSidebar = {
 };
 
 export const similarProjects = {
-  tagline: "Businesses You Can Back",
-  title: "Similar Projects",
+  tagline: "NGO Events You Can Support",
+  title: "Similar NGO Events",
   projects: projects.slice(0, 3),
 };

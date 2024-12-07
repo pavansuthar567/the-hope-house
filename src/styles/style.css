@@ -2066,8 +2066,8 @@ p {
     6.EXPLORE PROJECTS css 
 ===========================*/
 .explore-projects-area {
-  padding-top: 111px;
-  padding-bottom: 119px;
+  padding-top: 91px;
+  padding-bottom: 99px;
 }
 .explore-projects-area .swiper {
   padding: 0 10px 43px 10px;
@@ -2144,13 +2144,18 @@ p {
   content: "";
   left: 0;
   top: 0;
-  height: 600px;
+  height: 500px;
   width: 100%;
   background: #f7f7f9;
 }
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
   .explore-projects-area.explore-projects-page-area::before {
-    height: 520px;
+    height: 470px;
+  }
+}
+@media (max-width: 767px) {
+  .explore-projects-area.explore-projects-page-area::before {
+    height: 460px;
   }
 }
 
@@ -6314,6 +6319,23 @@ p {
   .project-details-content-top
   .project-details-thumb {
   padding-top: 58px;
+}
+
+.project-details-content-area
+  .project-details-content-top
+  .project-details-thumb {
+  padding-top: 58px;
+}
+.project-details-content-area .tab-content span {
+  line-height: 30px;
+  color: #fff;
+  background: #674df0;
+  padding: 0 15px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 13px;
 }
 .project-details-content-area
   .project-details-content-top

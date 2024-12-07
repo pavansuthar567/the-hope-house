@@ -47,7 +47,9 @@ export const aboutAreaThree = {
 };
 
 export const aboutIntroduction = {
-  thumb: thumb3,
+  // thumb: thumb3,
+  thumb:
+    "https://res.cloudinary.com/dlqdosage/image/upload/v1731915408/media/vdcoaqhydjlkzhdmmltp.jpg",
   tagline: "Our Mission",
   title: "Empower Communities",
   count: 8000,
