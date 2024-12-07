@@ -7,6 +7,7 @@ import "@/vendors/flaticon.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../../node_modules/swiper/swiper-bundle.min.css";
 import "react-modal-video/css/modal-video.css";
+import 'ckeditor5/ckeditor5.css';
 
 // extra css
 import "@/styles/default.css";
