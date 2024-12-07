@@ -1,5 +1,5 @@
 import { projectsArea } from "@/data/projectsArea";
-import React, { useCallback, useEffect } from "react";
+import React, { useCallback, useEffect, useMemo } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import SingleProject from "./SingleProject";
 import { useDispatch, useSelector } from "react-redux";
