@@ -7513,7 +7513,9 @@ p {
 .contact-form-area .section-title {
   padding-bottom: 42px;
 }
-.contact-form-area .conact-form-item .input-box input {
+.contact-form-area .conact-form-item .input-box input,
+.explore-area .event-filter-item .input-box input,
+.news-area .blog-filter-item .input-box input {
   width: 100%;
   height: 70px;
   background: #f7f7f9;
@@ -7525,11 +7527,15 @@ p {
   font-size: 16px;
   text-transform: capitalize;
 }
-.contact-form-area .conact-form-item .input-box input::placeholder {
+.contact-form-area .conact-form-item .input-box input::placeholder,
+.explore-area .event-filter-item .input-box input::placeholder,
+.news-area .blog-filter-item .input-box input::placeholder {
   opacity: 1;
   color: #838694;
 }
-.contact-form-area .conact-form-item .input-box textarea {
+.contact-form-area .conact-form-item .input-box textarea,
+.explore-area .event-filter-item .input-box textarea,
+.news-area .blog-filter-item .input-box textarea {
   width: 100%;
   height: 170px;
   background: #f7f7f9;
@@ -7543,11 +7549,15 @@ p {
   font-size: 16px;
   text-transform: capitalize;
 }
-.contact-form-area .conact-form-item .input-box textarea::placeholder {
+.contact-form-area .conact-form-item .input-box textarea::placeholder,
+.explore-area .event-filter-item .input-box textarea::placeholder,
+.news-area .blog-filter-item .input-box textarea::placeholder {
   opacity: 1;
   color: #838694;
 }
-.contact-form-area .conact-form-item .input-box select {
+.contact-form-area .conact-form-item .input-box select,
+.explore-area .event-filter-item .input-box select,
+.news-area .blog-filter-item .input-box select {
   width: 100%;
   height: 70px;
   background: #f7f7f9;
@@ -7575,12 +7585,16 @@ p {
   overflow: hidden; /* Prevents flickering */
 }
 
-.contact-form-area .conact-form-item .input-box select:focus-visible {
+.contact-form-area .conact-form-item .input-box select:focus-visible,
+.explore-area .event-filter-item .input-box select:focus-visible,
+.news-area .blog-filter-item .input-box select:focus-visible {
   outline: none; /* Remove outline when options are visible */
   box-shadow: none; /* Remove any box-shadow that may appear */
 }
 
-.contact-form-area .conact-form-item .input-box select option {
+.contact-form-area .conact-form-item .input-box select option,
+.explore-area .event-filter-item .input-box select option,
+.news-area .blog-filter-item .input-box select option {
   color: #838694;
   backface-visibility: hidden; /* Prevents flickering */
 }

@@ -1,22 +1,25 @@
-import { toast } from 'react-toastify';
+import { toast } from "react-toastify";
 
-import { fhelper } from 'src/_helpers';
-import axios from 'axios';
-import { skills } from 'src/_helpers/constants';
+import { fhelper } from "src/_helpers";
+import axios from "axios";
+import { skills } from "src/_helpers/constants";
 import {
   setCrudEventLoading,
   setSelectedEvent,
   setEventList,
   setEventLoading,
-} from 'src/store/slices/eventSlice';
-import { toastError } from '.';
-import { deleteFile, fileUpload } from './upload.service';
+} from "src/store/slices/eventSlice";
+import { toastError } from ".";
+import { deleteFile, fileUpload } from "./upload.service";
 
 export const getEvents = () => async (dispatch) => {
   try {
     dispatch(setEventLoading(true));
-    const res = await axios.get('event');
-    const updated = res?.data?.data?.map((x, i) => ({ srNo: i + 1, ...x }));
+    const res = await axios.get("event");
+    const updated = res?.data?.data
+      ?.filter((x) => x.status !== "Cancelled")
+      ?.map((x, i) => ({ srNo: i + 1, ...x }));
+
     await dispatch(setEventList(fhelper.sortByField(updated) || []));
     return true;
   } catch (e) {
@@ -32,7 +35,7 @@ export const deleteEvent = (id) => async (dispatch) => {
     dispatch(setCrudEventLoading(true));
     const res = await axios.delete(`event/${id}`);
     if (res) {
-      toast.success('A event deleted successfully');
+      toast.success("A event deleted successfully");
       return true;
     } else return false;
   } catch (e) {
@@ -49,7 +52,8 @@ export const createEvent = (payload) => async (dispatch) => {
     let obj = { ...payload };
     let urls = [];
 
-    let files = [...obj?.featuredImage?.filter((x) => typeof x === 'object')] || [];
+    let files =
+      [...obj?.featuredImage?.filter((x) => typeof x === "object")] || [];
 
     if (files?.length) {
       try {
@@ -60,14 +64,14 @@ export const createEvent = (payload) => async (dispatch) => {
         return false;
       }
     } else {
-      obj.featuredImage = obj.featuredImage?.[0] || '';
+      obj.featuredImage = obj.featuredImage?.[0] || "";
     }
 
     delete obj.deleteUploadedfeaturedImage;
-    const res = await axios.post('event', obj);
+    const res = await axios.post("event", obj);
 
     if (res) {
-      toast.success('A event inserted successfully');
+      toast.success("A event inserted successfully");
       return true;
     }
     return false;
@@ -89,7 +93,10 @@ export const updateEvent = (obj) => async (dispatch) => {
         let urls = [];
 
         // Delete old images from Cloudinary
-        if (obj?.deleteUploadedfeaturedImage && obj?.deleteUploadedfeaturedImage?.length) {
+        if (
+          obj?.deleteUploadedfeaturedImage &&
+          obj?.deleteUploadedfeaturedImage?.length
+        ) {
           try {
             await dispatch(deleteFile(obj?.deleteUploadedfeaturedImage));
           } catch (e) {
@@ -100,7 +107,9 @@ export const updateEvent = (obj) => async (dispatch) => {
 
         // let files = [...obj?.featuredImage?.filter((x) => typeof x === 'object')];
         let files = [
-          ...(obj?.featuredImage || [])?.filter((x) => x instanceof File || x instanceof Blob),
+          ...(obj?.featuredImage || [])?.filter(
+            (x) => x instanceof File || x instanceof Blob
+          ),
         ];
         if (files?.length) {
           try {
@@ -118,10 +127,10 @@ export const updateEvent = (obj) => async (dispatch) => {
         const res = await axios.put(`event/${_id}`, obj);
 
         if (res) {
-          toast.success('A event updated successfully');
+          toast.success("A event updated successfully");
           return true;
         } else {
-          toast.success('A event Id is required');
+          toast.success("A event Id is required");
           return false;
         }
       }
@@ -147,7 +156,9 @@ export const getEvent = (id) => async (dispatch) => {
       // Handling profile picture
       if (data?.featuredImage) {
         data.deleteUploadedfeaturedImage = [];
-        data.previewfeaturedImage = [{ image: data?.featuredImage, type: 'old' }];
+        data.previewfeaturedImage = [
+          { image: data?.featuredImage, type: "old" },
+        ];
         data.featuredImage = [data?.featuredImage];
       } else {
         data.featuredImage = []; // Clear if no profile picture
@@ -156,7 +167,7 @@ export const getEvent = (id) => async (dispatch) => {
       // Optionally handle additional images (if applicable)
       if (data?.featuredImage?.length) {
         data.featuredImage = data.featuredImage?.map((image) => ({
-          type: 'old',
+          type: "old",
           image,
         }));
       }

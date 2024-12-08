@@ -1,20 +1,23 @@
-import { toast } from 'react-toastify';
+import { toast } from "react-toastify";
 import {
   setBlogLoading,
   setBlogList,
   setCrudBlogLoading,
   setSelectedBlog,
-} from 'src/store/slices/blogSlice';
-import { fhelper } from 'src/_helpers';
-import { toastError } from '.';
-import axios from 'axios';
-import { deleteFile, fileUpload } from './upload.service';
+} from "src/store/slices/blogSlice";
+import { fhelper } from "src/_helpers";
+import { toastError } from ".";
+import axios from "axios";
+import { deleteFile, fileUpload } from "./upload.service";
 
 export const getBlogs = () => async (dispatch) => {
   try {
     dispatch(setBlogLoading(true));
-    const res = await axios.get('blog');
-    const updated = res?.data?.data?.map((x, i) => ({ srNo: i + 1, ...x }));
+    const res = await axios.get("blog");
+    const updated = res?.data?.data
+      ?.filter((x) => x.status !== "Draft")
+      ?.map((x, i) => ({ srNo: i + 1, ...x }));
+
     await dispatch(setBlogList(fhelper.sortByField(updated) || []));
     return true;
   } catch (e) {
@@ -30,7 +33,7 @@ export const deleteBlog = (id) => async (dispatch) => {
     dispatch(setCrudBlogLoading(true));
     const res = await axios.delete(`blog/${id}`);
     if (res) {
-      toast.success('Blog deleted successfully');
+      toast.success("Blog deleted successfully");
       return true;
     }
     return false;
@@ -48,7 +51,7 @@ export const createBlog = (payload) => async (dispatch) => {
     let obj = { ...payload };
     let urls = [];
 
-    let files = [...obj?.featuredImage?.filter((x) => typeof x === 'object')];
+    let files = [...obj?.featuredImage?.filter((x) => typeof x === "object")];
 
     if (files?.length) {
       urls = await dispatch(fileUpload(files));
@@ -58,10 +61,10 @@ export const createBlog = (payload) => async (dispatch) => {
     }
 
     delete obj.deleteUploadedFeaturedImage;
-    const res = await axios.post('blog', obj);
+    const res = await axios.post("blog", obj);
 
     if (res) {
-      toast.success('Blog created successfully');
+      toast.success("Blog created successfully");
       return true;
     }
     return false;
@@ -88,28 +91,31 @@ export const updateBlog = (obj) => async (dispatch) => {
       let urls = [];
 
       // Delete old images from Cloudinary
-      if (obj?.deleteUploadedFeaturedImage && obj?.deleteUploadedFeaturedImage?.length) {
+      if (
+        obj?.deleteUploadedFeaturedImage &&
+        obj?.deleteUploadedFeaturedImage?.length
+      ) {
         await dispatch(deleteFile(obj?.deleteUploadedFeaturedImage));
       }
 
-      let files = [...obj?.featuredImage?.filter((x) => typeof x === 'object')];
+      let files = [...obj?.featuredImage?.filter((x) => typeof x === "object")];
       if (files?.length) {
         urls = await dispatch(fileUpload(files));
         if (urls?.length) obj.featuredImage = urls?.[0];
       } else {
-        obj.featuredImage = obj.featuredImage?.[0] || '';
+        obj.featuredImage = obj.featuredImage?.[0] || "";
       }
 
       delete obj.deleteUploadedFeaturedImage;
       const res = await axios.put(`blog/${_id}`, obj);
 
       if (res) {
-        toast.success('Blog updated successfully');
+        toast.success("Blog updated successfully");
         return true;
       }
     }
 
-    toast.error('Blog update failed: ID is required');
+    toast.error("Blog update failed: ID is required");
     return false;
   } catch (e) {
     toastError(e);
@@ -127,12 +133,14 @@ export const getBlog = (id) => async (dispatch) => {
     const { data } = res?.data || {};
 
     if (res) {
-      let blog = { ...data, tags: data?.tags?.join(', ') };
+      let blog = { ...data, tags: data?.tags?.join(", ") };
 
       // Handling profile picture
       if (blog?.featuredImage) {
         blog.deleteUploadedFeaturedImage = [];
-        blog.previewFeaturedImage = [{ image: blog?.featuredImage, type: 'old' }];
+        blog.previewFeaturedImage = [
+          { image: blog?.featuredImage, type: "old" },
+        ];
         blog.featuredImage = [blog?.featuredImage];
       } else {
         blog.previewFeaturedImage = []; // Clear if no profile picture
@@ -141,7 +149,7 @@ export const getBlog = (id) => async (dispatch) => {
       // Optionally handle additional images (if applicable)
       if (blog?.featuredImage?.length) {
         blog.previewFeaturedImage = blog.featuredImage?.map((image) => ({
-          type: 'old',
+          type: "old",
           image,
         }));
       }

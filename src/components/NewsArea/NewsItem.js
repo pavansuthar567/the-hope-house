@@ -3,8 +3,14 @@ import Link from "next/link";
 import React from "react";
 import { Col, Image } from "react-bootstrap";
 
-const NewsItem = ({ news = {}, index = 0, newsTwo = false }) => {
-  const { _id, featuredImage, publishedDate, author, title, image2 } = news;
+const NewsItem = ({
+  news = {},
+  index = 0,
+  newsTwo = false,
+  isPagination = false,
+}) => {
+  const { _id, featuredImage, publishedDate, author, title, image2, category } =
+    news;
   const newImage = newsTwo && image2 ? image2 : featuredImage;
   const isEven = (index + 1) % 2 === 0;
 
@@ -29,9 +35,20 @@ const NewsItem = ({ news = {}, index = 0, newsTwo = false }) => {
             </li>
           </ul>
           <h3 className="title">{title}</h3>
-          <Link href={`/news/${_id}`}>
-            <i className="flaticon-next"></i>
-          </Link>
+          {isPagination ? (
+            <div className="d-flex justify-content-between flex-column">
+              <span style={{ display: "inline-block", width: "fit-content" }}>
+                {category?.toUpperCase()}
+              </span>
+              <Link href={`/news/${_id}`}>
+                <i className="flaticon-next"></i>
+              </Link>
+            </div>
+          ) : (
+            <Link href={`/news/${_id}`}>
+              <i className="flaticon-next"></i>
+            </Link>
+          )}
         </div>
       </div>
     </Col>
