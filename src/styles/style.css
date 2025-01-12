@@ -7604,9 +7604,15 @@ p {
   background: #674df0;
   position: relative;
 }
+.contact-info-area .contact-info-item.has-social-links {
+  padding-bottom: 64px;
+}
 @media only screen and (min-width: 1200px) and (max-width: 1600px) {
   .contact-info-area .contact-info-item {
     padding: 74px 0 74px 30px;
+  }
+  .contact-info-area .contact-info-item.has-social-links {
+    padding-bottom: 64px;
   }
 }
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
@@ -7833,6 +7839,39 @@ p {
   height: 20px;
   width: 20px;
   opacity: 1;
+}
+
+.contact-info-area .contact-info-item.item-3 .social-links {
+  margin-top: 10px;
+}
+.contact-info-area .contact-info-item.item-3 ul .social-link {
+  display: inline-block;
+}
+.contact-info-area .contact-info-item.item-3 ul .social-link a {
+  height: 36px;
+  width: 36px;
+  text-align: center;
+  line-height: 36px;
+  color: #1b1f2e;
+  background: #29f0b4;
+  margin-right: 5px;
+  position: relative;
+  z-index: 5;
+}
+.contact-info-area .contact-info-item.item-3 ul .social-link a::before {
+  position: absolute;
+  content: "";
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: #fff;
+  z-index: -1;
+  transition: all 0.3s ease-out 0s;
+}
+.contact-info-area .contact-info-item.item-3 ul .social-link a:hover::before {
+  height: 9px;
+  width: 9px;
 }
 
 .contact-map {

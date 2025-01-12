@@ -63,6 +63,6 @@ export const contactInfoArea = [
     icon: "flaticon-contact",
     title: "Contact The Hope House",
     // lists: ["needhelp@krowd.com", "info@krowd.com", "666 888 0000"],
-    lists: ["thehopehousetrust@gmail.com", "800 593 0712", ""],
+    lists: ["thehopehousetrust@gmail.com", "800 593 0712"],
   },
 ];
