@@ -88,7 +88,7 @@ const SingleBanner = ({
               </h3>
               <Link
                 className={`main-btn${isActive ? " animated zoomIn" : ""}`}
-                href="/single-project"
+                href="/donate"
                 onMouseEnter={(e) => {
                   e.currentTarget.style.color = "white";
                   e.currentTarget.querySelector("i").style.color = "white";
