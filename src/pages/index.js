@@ -26,7 +26,7 @@ const Home = () => {
       <WhyChoose />
       <FunFacts />
       <TogetherArea />
-      <BrandArea />
+      {/* <BrandArea /> */}
       <TestimonialsArea />
       <TeamArea />
       <TeamMainArea count={8} />

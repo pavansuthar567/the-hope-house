@@ -7604,9 +7604,15 @@ p {
   background: #674df0;
   position: relative;
 }
+.contact-info-area .contact-info-item.has-social-links {
+  padding-bottom: 64px;
+}
 @media only screen and (min-width: 1200px) and (max-width: 1600px) {
   .contact-info-area .contact-info-item {
     padding: 74px 0 74px 30px;
+  }
+  .contact-info-area .contact-info-item.has-social-links {
+    padding-bottom: 64px;
   }
 }
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
@@ -7835,6 +7841,39 @@ p {
   opacity: 1;
 }
 
+.contact-info-area .contact-info-item.item-3 .social-links {
+  margin-top: 10px;
+}
+.contact-info-area .contact-info-item.item-3 ul .social-link {
+  display: inline-block;
+}
+.contact-info-area .contact-info-item.item-3 ul .social-link a {
+  height: 36px;
+  width: 36px;
+  text-align: center;
+  line-height: 36px;
+  color: #1b1f2e;
+  background: #29f0b4;
+  margin-right: 5px;
+  position: relative;
+  z-index: 5;
+}
+.contact-info-area .contact-info-item.item-3 ul .social-link a::before {
+  position: absolute;
+  content: "";
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: #fff;
+  z-index: -1;
+  transition: all 0.3s ease-out 0s;
+}
+.contact-info-area .contact-info-item.item-3 ul .social-link a:hover::before {
+  height: 9px;
+  width: 9px;
+}
+
 .contact-map {
   margin-bottom: -6px;
 }
@@ -7873,4 +7912,48 @@ p {
 }
 .portfolio-item:hover .portfolio-overlay {
   opacity: 1;
+}
+
+.donation-page {
+  background-color: #f9f9f9; /* Light background for contrast */
+  padding: 60px 0;
+}
+
+.donation-page h1 {
+  font-size: 2.5rem;
+  color: #191825; /* Dark color for headings */
+}
+
+.donation-page h2 {
+  font-size: 2rem;
+  color: #29f0b4; /* Accent color */
+}
+
+.donation-page p {
+  font-size: 1.2rem;
+  color: #333; /* Darker text for readability */
+}
+
+.donation-notes {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin: 20px 0;
+}
+
+.donation-notes li {
+  margin-bottom: 10px;
+}
+@media (max-width: 992px) {
+  .no-border-mobile {
+    border: none !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 992px) {
+  .tablet-payment {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    scale: 1.1;
+  }
 }

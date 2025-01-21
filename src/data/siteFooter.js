@@ -2,27 +2,39 @@ import bg from "@/images/footer-bg.jpg";
 import shape from "@/images/footer-shape.png";
 // import logo from "@/images/logo-2.png";
 import logo from "@/images/thh-logo-1.png";
+import facebookIcon from "@/svg/facebook-icon.svg";
+import xIcon from "@/svg/x-icon.svg";
+import instagramIcon from "@/svg/instagram-icon.svg";
+import linkedinIcon from "@/svg/linkedin-icon.svg";
 
 export const socials2 = [
   {
     id: 1,
     icon: "fa fa-facebook-square",
     href: "https://www.facebook.com/thehopehouse123?mibextid=kFxxJD",
+    alt: "facebook",
+    svgIconSrc: facebookIcon?.src,
   },
   {
     id: 2,
     icon: "fa fa-twitter",
     href: "https://x.com/TheHopeHouse2?t=hBH0pL_ZMEwm8pcDIrsesg&s=09",
+    alt: "facebook",
+    svgIconSrc: xIcon?.src,
   },
   {
     id: 3,
     icon: "fa fa-instagram",
     href: "https://www.instagram.com/the__hope__house?igsh=cDByemlyd29pOGF2",
+    alt: "instagram",
+    svgIconSrc: instagramIcon?.src,
   },
   {
     id: 4,
     icon: "fa fa-linkedin",
     href: "https://www.linkedin.com/company/the-hope-house-trust/",
+    alt: "linkedin",
+    svgIconSrc: linkedinIcon?.src,
   },
 ];
 

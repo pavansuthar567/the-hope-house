@@ -13,6 +13,7 @@ const SingleProject = ({ project = {} }) => {
     // capacity,
     // participantsRegistered,
     featuredImage,
+    whatsappLink="",
     // status,
   } = project;
 
@@ -62,7 +63,7 @@ const SingleProject = ({ project = {} }) => {
         </div> */}
         <div className="d-flex flex-column flex-md-row justify-content-between align-items-center">
           <Link
-            href="https://wa.me/yourwhatsapplink"
+            href={whatsappLink}
             className="whatsapp-link"
             target="_blank"
             style={{
@@ -114,7 +115,7 @@ const SingleProject = ({ project = {} }) => {
             <i
               className="fa fa-heart"
               style={{ color: "#674df0", marginRight: "5px" }}
-            ></i>
+              ></i>
             Donate Now
           </Link>
         </div>
