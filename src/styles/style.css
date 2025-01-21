@@ -7913,3 +7913,33 @@ p {
 .portfolio-item:hover .portfolio-overlay {
   opacity: 1;
 }
+
+.donation-page {
+  background-color: #f9f9f9; /* Light background for contrast */
+  padding: 60px 0;
+}
+
+.donation-page h1 {
+  font-size: 2.5rem;
+  color: #191825; /* Dark color for headings */
+}
+
+.donation-page h2 {
+  font-size: 2rem;
+  color: #29f0b4; /* Accent color */
+}
+
+.donation-page p {
+  font-size: 1.2rem;
+  color: #333; /* Darker text for readability */
+}
+
+.donation-notes {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin: 20px 0;
+}
+
+.donation-notes li {
+  margin-bottom: 10px;
+}

@@ -22,6 +22,8 @@ const PageTitle = ({ title = "", page = "", parent = "" }) => {
     News: "https://wallpapers.com/images/hd/composer-workspace-blogging-backdrop-4ferx6eq7jp9z9im.jpg",
     Event:
       "https://res.cloudinary.com/dlqdosage/image/upload/v1731915408/media/vdcoaqhydjlkzhdmmltp.jpg",
+    Donate:
+      "https://krowd-nextjs.vercel.app/_next/static/media/page-title-bg.e4241f75.jpg",
   };
 
   return (

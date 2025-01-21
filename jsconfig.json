@@ -5,6 +5,7 @@
       "@/components/*": ["src/components/*"],
       "@/styles/*": ["src/styles/*"],
       "@/images/*": ["src/assets/images/*"],
+      "@/svg/*": ["src/assets/svg/*"],
       "@/vendors/*": ["src/assets/vendors/*"],
       "@/fonts/*": ["src/assets/fonts/*"],
       "@/context/*": ["src/context/*"],

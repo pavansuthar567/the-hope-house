@@ -115,7 +115,7 @@ const SingleProject = ({ project = {} }) => {
             <i
               className="fa fa-heart"
               style={{ color: "#674df0", marginRight: "5px" }}
-            ></i>
+              ></i>
             Donate Now
           </Link>
         </div>
