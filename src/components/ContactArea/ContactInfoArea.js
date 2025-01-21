@@ -5,7 +5,7 @@ import TextSplit from "../Reuseable/TextSplit";
 import footerData from "@/data/siteFooter";
 import Link from "next/link";
 
-const { logo, socials } = footerData;
+const { socials } = footerData;
 
 const ContactInfoArea = () => {
   return (
@@ -18,9 +18,7 @@ const ContactInfoArea = () => {
                 <div
                   className={`contact-info-item${
                     id !== 1 ? ` item-${id}` : ""
-                  }${
-                    index === 2 ? ` has-social-links` : ""
-                  }`}
+                  }${index === 2 ? ` has-social-links` : ""}`}
                 >
                   <div className="icon">
                     <i className={icon}></i>
