@@ -25,11 +25,11 @@ const Donate = () => {
             />
           </div>
           <div className="p-4">
-            <Row className="g-4">
+            <Row>
               <Col
-                xs={12}
                 md={6}
                 className="border-end pe-4 d-flex flex-column align-items-center justify-content-center p-4"
+                // className="pe-4 d-flex flex-column align-items-center justify-content-center p-4"
               >
                 <h6
                   className="mb-4 text-uppercase font-weight-bold text-center"
@@ -63,40 +63,43 @@ const Donate = () => {
                   </p>
                 </div>
               </Col>
-              <Col xs={12} md={6} className="text-center">
-                <div className="d-flex flex-column justify-content-center align-items-center">
-                  <div className="d-flex justify-content-center align-items-center mb-2">
-                    <Image
-                      src={googlePayIcon?.src}
-                      alt="Google Pay"
-                      width={50}
-                      height={50}
-                    />
-                    <div style={{ margin: "0 10px" }}></div>
-                    <Image
-                      src={phonePayIcon?.src}
-                      alt="Phone Pay"
-                      width={45}
-                      height={45}
-                    />
-                    <div style={{ margin: "0 10px" }}></div>
-                    <Image
-                      src={paytmIcon?.src}
-                      alt="paytm"
-                      width={60}
-                      height={60}
-                    />
-                  </div>
-                  <div style={{ fontSize: "20px" }}>
-                    <strong>8005930712</strong>
+              <Col md={6} className="text-center">
+                <div className="d-flex justify-content-center align-items-center">
+                  <div className="d-flex flex-column justify-content-center text-center me-5">
+                    <div className="d-flex justify-content-center align-items-center mb-2">
+                      <Image
+                        src={googlePayIcon?.src}
+                        alt="Google Pay"
+                        width={50}
+                        height={50}
+                      />
+                      <div style={{ margin: "0 10px" }}></div>
+                      <Image
+                        src={phonePayIcon?.src}
+                        alt="Phone Pay"
+                        width={45}
+                        height={45}
+                      />
+                      <div style={{ margin: "0 10px" }}></div>
+                      <Image
+                        src={paytmIcon?.src}
+                        alt="paytm"
+                        width={60}
+                        height={60}
+                      />
+                    </div>
+                    <div style={{ fontSize: "20px" }}>
+                      <strong>8005930712</strong>
+                    </div>
                   </div>
                   <Image
                     src={payBarcode?.src}
                     alt="QR Code"
-                    className="img-fluid mt-3"
+                    className="img-fluid"
                     style={{
                       maxWidth: "170px",
                       borderRadius: "8px",
+                      //   marginLeft: "60px",
                     }}
                   />
                 </div>
