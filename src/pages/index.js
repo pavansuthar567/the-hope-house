@@ -1,5 +1,5 @@
 import BannerSlider from "@/components/BannerSlider/BannerSlider";
-import BrandArea from "@/components/BrandArea/BrandArea";
+// import BrandArea from "@/components/BrandArea/BrandArea";
 import Categories from "@/components/Categories/Categories";
 import CtaArea from "@/components/CtaArea/CtaArea";
 import FunFacts from "@/components/FunFacts/FunFacts";
@@ -13,7 +13,6 @@ import TeamMainArea from "@/components/TeamArea/TeamMainArea";
 import TestimonialsArea from "@/components/Testimonials/TestimonialsArea";
 import TogetherArea from "@/components/TogetherArea/TogetherArea";
 import WhyChoose from "@/components/WhyChoose/WhyChoose";
-import React from "react";
 
 const Home = () => {
   return (

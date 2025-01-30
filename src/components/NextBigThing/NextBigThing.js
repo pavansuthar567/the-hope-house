@@ -2,8 +2,9 @@ import { nextBigThing } from "@/data/nextBigThing";
 import Link from "next/link";
 import React, { useState } from "react";
 import { Col, Container, Image, Row } from "react-bootstrap";
+import { useSelector } from "react-redux";
 
-const { tagline, title, tabs, text, image, lists } = nextBigThing;
+const { tagline, title, tabs, text, lists } = nextBigThing;
 
 const NavItem = ({ tab = {}, current, handleCurrent }) => {
   const { tagline, id } = tab;
@@ -43,6 +44,10 @@ const TabContent = ({ tab = {}, current }) => {
 const NextBigThing = ({ className = "" }) => {
   const [current, setCurrent] = useState("pills-home");
 
+  const { selectedHome = {} } = useSelector(({ home }) => home);
+
+  const { supportTheNextInitiative } = selectedHome?.pageImages?.aboutUsPage;
+
   const handleCurrent = (current) => {
     setCurrent(current);
   };
@@ -77,7 +82,12 @@ const NextBigThing = ({ className = "" }) => {
               <p>{text}</p>
               <div className="next-big-thing-list">
                 <div className="thumb">
-                  <Image src={image} alt="" width={242} height={241} />
+                  <Image
+                    src={supportTheNextInitiative}
+                    alt=""
+                    width={242}
+                    height={241}
+                  />
                 </div>
                 <div className="list">
                   <ul>

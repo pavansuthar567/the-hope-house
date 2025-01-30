@@ -2,11 +2,15 @@ import { aboutIntroduction } from "@/data/aboutArea";
 import React from "react";
 import { Col, Container, Image, Row } from "react-bootstrap";
 import VisibilityCountUp from "../Reuseable/VisibilityCountUp";
+import { useSelector } from "react-redux";
 
-const { tagline, title, text, items, thumb, count, bottomText } =
-  aboutIntroduction;
+const { tagline, title, text, items, count, bottomText } = aboutIntroduction;
 
 const AboutIntroduction = () => {
+  const { selectedHome = {} } = useSelector(({ home }) => home);
+
+  const { empowerCommunities } = selectedHome?.pageImages?.aboutUsPage;
+
   return (
     <section className="about-introduction-area pt-120 pb-120">
       <Container>
@@ -26,7 +30,7 @@ const AboutIntroduction = () => {
           </Col>
           <Col lg={7}>
             <div className="about-introduction-thumb">
-              <Image src={thumb} alt="" width={570} height={530} />
+              <Image src={empowerCommunities} alt="" width={570} height={530} />
               <div className="about-introduction-customers">
                 <h3 className="title odometer">
                   <VisibilityCountUp count={count} />

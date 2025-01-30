@@ -1,8 +1,9 @@
 import { whyChoose } from "@/data/whyChoose";
 import React from "react";
 import { Col, Container, Image, Row } from "react-bootstrap";
+import { useSelector } from "react-redux";
 
-const { title, thumb, thumb2, tagline, title2, items } = whyChoose;
+const { title, tagline, title2, items } = whyChoose;
 
 const Item = ({ item = {} }) => {
   const { title, text } = item;
@@ -18,12 +19,17 @@ const Item = ({ item = {} }) => {
 const Thumb = ({ thumb }) => {
   return (
     <div className="thumb">
-      <Image src={thumb.src} alt="" />
+      <Image src={thumb} alt="" />
+      {/* <Image src={thumb.src} alt="" /> */}
     </div>
   );
 };
 
 const WhyChoose = () => {
+  const { selectedHome = {} } = useSelector(({ home }) => home);
+
+  const { whyChooseThumb1, whyChooseThumb2 } = selectedHome?.pageImages?.home;
+
   return (
     <section className="why-choose-area">
       <Container>
@@ -34,10 +40,10 @@ const WhyChoose = () => {
                 <div className="conent">
                   <h4 className="title">{title}</h4>
                 </div>
-                <Thumb thumb={thumb} />
+                <Thumb thumb={whyChooseThumb1} />
               </div>
               <div className="item-2">
-                <Thumb thumb={thumb2} />
+                <Thumb thumb={whyChooseThumb2} />
               </div>
             </div>
           </Col>
