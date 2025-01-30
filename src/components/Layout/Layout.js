@@ -1,12 +1,24 @@
 import Head from "next/head";
-import React from "react";
+import React, { useCallback, useEffect } from "react";
 import OffCanvasMenu from "../Header/OffCanvasMenu";
 import SearchPopup from "../Header/SearchPopup";
 import SiteFooter from "../SiteFooter/SiteFooter";
 import ScrollToTop from "./ScrollToTop";
 import Toast from "../Toast/Toast";
+import { useDispatch } from "react-redux";
+import { getHome } from "src/_services/home.service";
 
 const Layout = ({ children }) => {
+  const dispatch = useDispatch();
+
+  const loadData = useCallback(() => {
+    dispatch(getHome("67288fe3a9741c83df931724"));
+  }, [dispatch]);
+
+  useEffect(() => {
+    loadData();
+  }, [loadData]);
+
   return (
     <>
       <Head>

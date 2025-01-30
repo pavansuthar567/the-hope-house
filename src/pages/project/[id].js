@@ -29,7 +29,7 @@ const SingleProject = () => {
   return (
     <Layout>
       <Header />
-      <PageTitle title="Event" page="Events" />
+      <PageTitle title="Events" page="Events" />
       <ProjectDetailsArea project={selectedEvent} />
       <ProjectDetailsContent project={selectedEvent} />
       <SimilarProjects />

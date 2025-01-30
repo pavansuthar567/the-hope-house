@@ -1,18 +1,40 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 export const homeInitDetails = {
-  quote: '',
-  whoWeAre: '',
-  whatWeDo: '',
-  heroSectionVideo: '',
+  quote: "",
+  whoWeAre: "",
+  whatWeDo: "",
+  heroSectionVideo: "",
   // previewHeroSectionVideo: [],
   // deleteUploadedHeroSectionVideo: [],
   logo: [],
   previewLogo: [],
   deleteUploadedLogo: [],
   isActive: false,
-  termsOfUse: '',
-  privacyPolicy: '',
+  termsOfUse: "",
+  privacyPolicy: "",
+  pageImages: {
+    home: {
+      whyChooseThumb1: "",
+      whyChooseThumb2: "",
+      togetherBg: "",
+    },
+    pageTitleBackgrounds: {
+      about: "",
+      teamMembers: "",
+      event: "",
+      gallery: "",
+      faq: "",
+      blog: "",
+      contact: "",
+      donate: "",
+      volunteer: "",
+    },
+    aboutUsPage: {
+      empowerCommunities: "",
+      supportTheNextInitiative: "",
+    },
+  },
 };
 
 const initialState = {
@@ -25,7 +47,7 @@ const initialState = {
 };
 
 const homeSlice = createSlice({
-  name: 'home',
+  name: "home",
   initialState,
   reducers: {
     setHomeList: (state, action) => {
