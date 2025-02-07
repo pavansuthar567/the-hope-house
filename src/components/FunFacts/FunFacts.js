@@ -9,8 +9,12 @@ import shape2 from "@/images/fun-facts-shape-2.png";
 const FunFacts = ({ className = "" }) => {
   const dispatch = useDispatch();
 
-  const { totalVolunteers, totalEvents, totalDonations, totalTestimonials } =
-    useSelector((state) => state.dashboard.statistics);
+  const { statistics = {} } = useSelector(
+    (state) => state.home.selectedHome || {}
+  );
+
+  const { beneficiaryServed, cityPresence, donationReceived, totalVolunteers } =
+    statistics;
 
   const facts = [
     {
@@ -18,7 +22,7 @@ const FunFacts = ({ className = "" }) => {
       icon: "flaticon-scrum",
       // count: totalVolunteers,
       // text: "Total Volunteers",
-      count: 0,
+      count: beneficiaryServed,
       text: "Beneficiary Served",
     },
     {
@@ -34,7 +38,7 @@ const FunFacts = ({ className = "" }) => {
       icon: "flaticon-team",
       // count: totalDonations,
       // text: "Total Donations",
-      count: 10,
+      count: cityPresence,
       text: "City Presence",
     },
     {
@@ -43,8 +47,8 @@ const FunFacts = ({ className = "" }) => {
       // count: totalTestimonials,
       // text: "Total Testimonials",
       icon: "flaticon-pay",
-      count: 100000,
-      text: "Rs. Donation received",
+      count: donationReceived,
+      text: "Rs. Donation Received",
     },
     // {
     //   id: 5,
