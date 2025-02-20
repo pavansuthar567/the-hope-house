@@ -6,7 +6,8 @@ import banner2 from "@/images/shape/banner-line-2.png";
 export const bannerSlider = [
   {
     id: 1,
-    bg: "src/assets/images/banner-bg-1.jpg",
+    // bg: "src/assets/images/banner-bg-1.jpg",
+    bg: "https://www.youtube.com/embed/BzWKsmMr4hk?autoplay=1&mute=1&loop=1&playlist=BzWKsmMr4hk&controls=0&showinfo=0&modestbranding=1",
     // text: "Raising Money Has Never Been So Easy",
     // title: "Crowdfunding Platforms",
     text: "Empowering Communities Through Compassion",
@@ -15,7 +16,8 @@ export const bannerSlider = [
   },
   {
     id: 2,
-    bg: "src/assets/images/banner-bg-2.jpg",
+    // bg: "src/assets/images/banner-bg-2.jpg",
+    bg: "https://www.youtube.com/embed/WJP-VhMr4nU?autoplay=1&mute=1&loop=1&playlist=WJP-VhMr4nU&controls=0&showinfo=0&modestbranding=1",
     // text: "Raising Money Has Never Been So Easy",
     // title: "Crowdfunding Platforms",
     text: "Together, We Can Make a Difference",
