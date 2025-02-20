@@ -8,6 +8,7 @@ export const faqsInitDetails = {
 
 const initialState = {
   faqsList: [],
+  faqsFilteredList: [],
   perPageCount: 12,
   faqsLoading: false,
   crudFaqsLoading: false,
@@ -21,6 +22,9 @@ const faqsSlice = createSlice({
   reducers: {
     setFaqsList: (state, action) => {
       state.faqsList = action.payload;
+    },
+    setFaqsFilteredList: (state, action) => {
+      state.faqsFilteredList = action.payload;
     },
     setPerPageCount: (state, action) => {
       state.perPageCount = action.payload;
@@ -42,6 +46,7 @@ const faqsSlice = createSlice({
 
 export const {
   setFaqsList,
+  setFaqsFilteredList,
   setPerPageCount,
   setFaqsLoading,
   setSelectedFaqs,

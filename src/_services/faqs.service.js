@@ -5,6 +5,7 @@ import {
   setFaqsList,
   setCrudFaqsLoading,
   setSelectedFaqs,
+  setFaqsFilteredList,
 } from "src/store/slices/faqsSlice";
 import { fhelper } from "src/_helpers";
 import axios from "axios";
@@ -15,7 +16,10 @@ export const getFaqs = () => async (dispatch) => {
     dispatch(setFaqsLoading(true));
     const res = await axios.get("faq");
     const updated = res?.data?.data?.map((x, i) => ({ srNo: i + 1, ...x }));
-    await dispatch(setFaqsList(fhelper.sortByField(updated) || []));
+
+    const sortedData = fhelper.sortByField(updated);
+    await dispatch(setFaqsList(sortedData || []));
+    await dispatch(setFaqsFilteredList(sortedData || []));
     return true;
   } catch (e) {
     toastError(e);

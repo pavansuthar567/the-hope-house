@@ -12,9 +12,9 @@ const HeaderInfo = ({ socials, icon, phone = "", searchColor }) => {
     <div className="header-info d-flex align-items-center">
       {socials && <Social socials={socials} />}
       <div className="search d-none d-lg-block">
-        <Link className="cursor-pointer" onClick={toggleSearch} href="#">
+        {/* <Link className="cursor-pointer" onClick={toggleSearch} href="#">
           <SearchIcon color={searchColor} />
-        </Link>
+        </Link> */}
       </div>
       <div className="info d-none d-sm-block">
         <Image src={icon.src} alt="" />

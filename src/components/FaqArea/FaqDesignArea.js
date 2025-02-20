@@ -48,8 +48,8 @@ const SingleTab = ({ tab = {}, current }) => {
 };
 
 const convertFaqsToDesignArea = (faqs) => {
-  const categories = [...new Set(faqs.map((faq) => faq.category))];
-  const navItems = categories.map((category, index) => ({
+  const categories = [...new Set(faqs.map((faq) => faq?.category))];
+  const navItems = categories?.map((category, index) => ({
     id: index + 1,
     href: `pills-${index + 1}`,
     icon: "flaticon-placeholder", // Customize icons per category as needed
@@ -75,7 +75,7 @@ const convertFaqsToDesignArea = (faqs) => {
 const FaqDesignArea = () => {
   const dispatch = useDispatch();
   const [current, setCurrent] = useState("pills-1");
-  const { faqsList: faqs } = useSelector(({ faqs }) => faqs);
+  const { faqsFilteredList: faqs } = useSelector(({ faqs }) => faqs);
 
   const loadData = useCallback(() => {
     dispatch(getFaqs());
