@@ -23,7 +23,7 @@ const Category = ({ category = {} }) => {
 
 const FaqArea = () => {
   const dispatch = useDispatch();
-  const { faqsList: faqs } = useSelector(({ faqs }) => faqs);
+  const { faqsFilteredList: faqs } = useSelector(({ faqs }) => faqs);
 
   const loadData = useCallback(() => {
     dispatch(getFaqs());
@@ -53,7 +53,7 @@ const FaqArea = () => {
             </div>
           </Col>
           <Col lg={6}>
-            <Faqs faqs={faqs?.slice(0, 4)} />
+            {faqs?.length > 0 && <Faqs faqs={faqs?.slice(0, 4)} />}
           </Col>
         </Row>
       </Container>
