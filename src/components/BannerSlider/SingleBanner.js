@@ -20,14 +20,12 @@ const SingleBanner = ({
         isBannerThree ? "banner-3-area align-items-end" : "align-items-center"
       }`}
       style={{
-        backgroundImage: `url(${"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgN6bX7PLVRuY9RSvLl2roObBtUEbmNPrjQEgSe-HsLIfcszD48NrVGpSmDI0lpdbwWOoN3D9qFf9ifkREmxyhUY0rwcU38ICVUzBCIykzGKvJOkG0wwq456EIXoM_v_n1Q7uVCefmfwsli4n6YknyoPiJZBhOluBmCx_927mT3ruFngx0vTRTXk4ybgg/s1600-rw/beeautiful-sunset-illustration-1212023.png"})`,
+        position: "relative",
+        overflow: "hidden",
       }}
-      // style={{
-      //   position: "relative",
-      //   overflow: "hidden",
-      // }}
     >
-      {/* <div
+      {/* YouTube Video Background */}
+      <div
         className="video-background"
         style={{
           position: "absolute",
@@ -35,12 +33,11 @@ const SingleBanner = ({
           left: 0,
           width: "100%",
           height: "100%",
-          overflow: "hidden",
           zIndex: -1,
         }}
       >
         <iframe
-          src="https://www.youtube.com/embed/0CbFrom3Qkk?autoplay=1&mute=1&loop=1&playlist=0CbFrom3Qkk"
+          src={bg}
           frameBorder="0"
           allow="autoplay; encrypted-media"
           allowFullScreen
@@ -52,10 +49,11 @@ const SingleBanner = ({
             width: "100%",
             height: "100%",
             objectFit: "cover",
-            pointerEvents: "none", // Prevent interaction with the iframe
+            pointerEvents: "none",
           }}
         ></iframe>
-      </div> */}
+      </div>
+
       <Container>
         <Row
           className={
@@ -111,6 +109,7 @@ const SingleBanner = ({
           </Col>
         </Row>
       </Container>
+
       {!isBannerTwo && !isBannerThree && (
         <div
           className={`banner-line${isActive ? " animated fadeInRightBig" : ""}`}
@@ -118,6 +117,7 @@ const SingleBanner = ({
           <Image src={banner.src} alt="" />
         </div>
       )}
+
       {isBannerTwo && (
         <>
           <div className="banner-color-shadow">
